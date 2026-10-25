@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <id>tag:playhalden.com,2026-10-25:/devlog/</id>
+  <title>HALDEN devlog — Field notes</title>
+  <subtitle>Short, honest notes from the build: what’s in, what changed, what’s next.</subtitle>
+  <link rel="self" type="application/atom+xml" href="https://playhalden.com/devlog/feed.xml"/>
+  <link rel="alternate" type="text/html" href="https://playhalden.com/devlog/"/>
+  <updated>2026-10-25T07:49:00Z</updated>
+  <author><name>HALDEN</name></author>
+  <icon>https://playhalden.com/icons/icon-192.png</icon>
+  <rights>© 2026 HALDEN</rights>
+  <entry>
+    <id>tag:playhalden.com,2026-10-25:/devlog/field-notes-01/</id>
+    <title>Field notes 01: Where the climb stands</title>
+    <link rel="alternate" type="text/html" href="https://playhalden.com/devlog/field-notes-01/"/>
+    <published>2026-10-25T00:00:00Z</published>
+    <updated>2026-10-25T07:49:00Z</updated>
+    <summary>Where HALDEN stands in October 2026: a full solo run through all three strata, four climbers, 30+ weapons, Kindred companions, and co-op in testing.</summary>
+    <content type="html">&lt;p&gt;This is the first entry in HALDEN’s devlog: short, honest notes on what’s in the build and what’s next. Here’s where things stand.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What plays today.&lt;/strong&gt; In the current development build, a solo run climbs all three strata — Rootworks, Broodways and The Crown — from the first room to the final boss. Four climbers are playable, each with a resource of their own to build and spend. More than thirty weapons can drop along the way, alongside relics and gold.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What makes it HALDEN.&lt;/strong&gt; Ichor. The tower pays for precision: hits fill it, headshots fill it faster, and at 100 you SURGE. Aiming well becomes a resource you can spend. And Kindred — small creatures you meet on one run who climb at your side on the next.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What’s still being built.&lt;/strong&gt; Online co-op is in development and testing; the next milestone is a squad playing across real PCs over the internet. Models, lighting and effects are still changing, which is why every image on this site says whether it’s in-engine or illustration.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What’s next.&lt;/strong&gt; Co-op tests between real machines, fresh footage from the current build, and more field notes as the tower grows.&lt;/p&gt;
+&lt;p&gt;Follow along with the &lt;a href=&#34;https://playhalden.com/devlog/feed.xml&#34;&gt;RSS feed&lt;/a&gt; or on &lt;a href=&#34;https://www.youtube.com/@EmetStudiosOfficial&#34;&gt;YouTube&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+</feed>

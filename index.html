@@ -3,35 +3,930 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HALDEN</title>
-<meta name="description" content="HALDEN - a co-op first-person roguelite. Climb the living tower alone or with up to three friends.">
-<link rel="icon" type="image/png" href="logo.png">
-<style>
-  :root { --bg: #14100c; --panel: #1d1712; --ink: #efe6d2; --muted: #b9ab90; --gold: #e6b450; --ember: #e8722c; --line: #3a2e22; }
-  * { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body { margin: 0; background: radial-gradient(ellipse at 50% 0%, #2a1d12 0%, var(--bg) 60%); color: var(--ink);
-         font: 17px/1.6 Georgia, "Times New Roman", serif; display: flex; flex-direction: column; }
-  main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 20px; }
-  main img { width: 128px; height: 128px; filter: drop-shadow(0 0 18px rgba(232,114,44,.35)); }
-  h1 { font-size: clamp(44px, 9vw, 84px); letter-spacing: .22em; margin: 18px 0 6px; padding-left: .22em; color: var(--gold); }
-  .tag { color: var(--muted); font-size: 19px; max-width: 620px; margin: 0 0 26px; }
-  .pills { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 30px; }
-  .pills span { border: 1px solid var(--line); background: var(--panel); padding: 6px 14px; border-radius: 999px; font-size: 15px; }
-  .contact a { color: var(--gold); }
-  footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
-  footer div { max-width: 860px; margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  footer a { color: var(--muted); }
-</style>
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; img-src &#39;self&#39; data:; style-src &#39;self&#39;; script-src &#39;self&#39;; font-src &#39;self&#39;; media-src &#39;self&#39;; manifest-src &#39;self&#39;; frame-src https://www.youtube-nocookie.com; connect-src &#39;self&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; form-action &#39;none&#39;; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#120d0a">
+<title>HALDEN | First-person roguelite shooter for Windows PC</title>
+<meta name="description" content="HALDEN is a cel-shaded first-person roguelite shooter for Windows PC. Climb a living tower: four climbers, 30+ weapons and a new route every run.">
+<link rel="canonical" href="https://playhalden.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HALDEN">
+<meta property="og:title" content="HALDEN | First-person roguelite shooter for Windows PC">
+<meta property="og:description" content="HALDEN is a cel-shaded first-person roguelite shooter for Windows PC. Climb a living tower: four climbers, 30+ weapons and a new route every run.">
+<meta property="og:url" content="https://playhalden.com/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://playhalden.com/assets/img/og/halden-og-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="HALDEN key art: two climbers before the golden living tower, with the HALDEN wordmark. AI-assisted illustration.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HALDEN | First-person roguelite shooter for Windows PC">
+<meta name="twitter:description" content="HALDEN is a cel-shaded first-person roguelite shooter for Windows PC. Climb a living tower: four climbers, 30+ weapons and a new route every run.">
+<meta name="twitter:image" content="https://playhalden.com/assets/img/og/halden-og-1200x630.jpg">
+<meta name="twitter:image:alt" content="HALDEN key art: two climbers before the golden living tower, with the HALDEN wordmark. AI-assisted illustration.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://playhalden.com/#website","name":"HALDEN","url":"https://playhalden.com/","inLanguage":"en"},{"@type":"VideoGame","@id":"https://playhalden.com/#game","name":"HALDEN","url":"https://playhalden.com/","description":"HALDEN is a cel-shaded first-person roguelite shooter for Windows PC. Climb a living tower: four climbers, 30+ weapons and a new route every run.","genre":["Roguelite","First-person shooter"],"gamePlatform":"PC","operatingSystem":"Windows","applicationCategory":"Game","playMode":["SinglePlayer"],"creativeWorkStatus":"In development","inLanguage":"en","image":"https://playhalden.com/assets/img/og/halden-og-1200x630.jpg","trailer":{"@id":"https://playhalden.com/#trailer"},"sameAs":["https://www.youtube.com/@EmetStudiosOfficial"]},{"@type":"VideoObject","@id":"https://playhalden.com/#trailer","name":"HALDEN | Official Reveal Trailer","description":"Cinematic reveal trailer for HALDEN. AI-assisted visuals; not gameplay footage.","thumbnailUrl":"https://playhalden.com/assets/img/halden-trailer-poster-1440.jpg","uploadDate":"2026-10-03T15:25:49-07:00","duration":"PT1M11S","embedUrl":"https://www.youtube-nocookie.com/embed/CzQmfyqux14"}]}</script>
+<link rel="preload" href="/assets/fonts/cinzel-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/spectral-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/avif" media="(min-width: 64rem)" imagesrcset="/assets/img/halden-hero-d-768.avif 768w, /assets/img/halden-hero-d-1024.avif 1024w, /assets/img/halden-hero-d-1440.avif 1440w, /assets/img/halden-hero-d-1672.avif 1672w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(max-width: 63.99rem)" imagesrcset="/assets/img/halden-hero-m-480.avif 480w, /assets/img/halden-hero-m-768.avif 768w, /assets/img/halden-hero-m-941.avif 941w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="/assets/css/site.99b9d45f.css">
+<script type="module" src="/assets/js/site.a7c09919.js"></script>
+<link rel="alternate" type="application/atom+xml" title="HALDEN devlog" href="/devlog/feed.xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 </head>
-<body>
-<main>
-  <img src="logo.png" alt="HALDEN logo">
-  <h1>HALDEN</h1>
-  <p class="tag">A co-op first-person roguelite. Climb the living tower alone or with up to three friends, wave after wave.</p>
-  <div class="pills"><span>Co-op for 1-4 players</span><span>First-person action</span><span>Windows PC</span></div>
-  <p class="contact">Contact: <a href="mailto:contact@playhalden.com">contact@playhalden.com</a></p>
+<body class="page-home" data-theme="ember">
+<a class="skip" href="#main">Skip to content</a>
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+<symbol id="i-brush" viewBox="0 0 24 24"><path d="M20 4L11 14"/><path d="M13.5 11.5l-3-3"/><path d="M10 13c-3 0-5 1.8-5 4.6 0 .9-.6 1.6-1.4 2 4.4.8 8.4-1.3 8.4-4.6"/></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M8 16L16 8M9.5 8H16v6.5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+<symbol id="i-vein" viewBox="0 0 14 20"><path d="M7 1v7.5M7 8.5L3.2 13.5 2 19M7 8.5l3.6 4.2.9 5.8M7 8.5v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="8.5" r="1.4" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-fight" viewBox="0 0 24 24"><path d="M4 4l10.5 10.5M4 4h3.5M4 4v3.5M20 4L9.5 14.5M20 4h-3.5M20 4v3.5M7 13.5l3.5 3.5M5.5 18.5l2.5-2.5M17 13.5L13.5 17M18.5 18.5L16 16"/></symbol>
+<symbol id="i-elite" viewBox="0 0 24 24"><path d="M5 3.5c-.3 3.4 1.2 5.6 3 6.3M19 3.5c.3 3.4-1.2 5.6-3 6.3"/><path d="M7 12a5 5 0 0 1 10 0v3.2l-2 1V19H9v-2.8l-2-1z"/><path d="M10 13.2h.01M14 13.2h.01" stroke-width="2.6"/></symbol>
+<symbol id="i-event" viewBox="0 0 24 24"><path d="M12 2.5l9.5 9.5-9.5 9.5L2.5 12z"/><path d="M10 10.2a2 2 0 1 1 2.9 1.8c-.6.3-.9.8-.9 1.5"/><path d="M12 16.3h.01" stroke-width="2.4"/></symbol>
+<symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><path d="M12 9.6l2.4 2.4-2.4 2.4-2.4-2.4z"/></symbol>
+<symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c.8 3.2 5 5.2 5 10a5 5 0 0 1-10 0c0-2.1 1-3.6 2-4.5 0 2 .9 3 2 3.2 0-3-1-5.2 1-8.7z"/></symbol>
+<symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 10H5z"/><path d="M5 21h14"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c.5-3.5 3-5.5 6-5.5s5.5 2 6 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M15.6 13.6c2.6.2 4.5 2 4.9 5"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5"/><path d="M3 16.5L12 21l9-4.5"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+<symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9h16l-1 11H5z"/><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5C6.5 4 9.5 4 12 6c2.5-2 5.5-2 8-.5V19c-2.5-1.5-5.5-1.5-8 .5-2.5-2-5.5-2-8-.5z"/><path d="M12 6v13.5"/></symbol>
+<symbol id="i-youtube" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
+<symbol id="i-rss" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></symbol>
+</svg>
+
+<div class="hero-sentinel" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="site-header__inner wrap">
+    <a class="brand" href="/" aria-current="page"><img src="/logo.png" width="32" height="32" alt=""><span class="brand__word">HALDEN</span><span class="visually-hidden">, home</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg><span>Menu</span></button>
+    <div class="nav-panel" id="nav-panel">
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="/#trailer">Trailer</a></li>
+          <li><a href="/#climb">The Climb</a></li>
+          <li><a href="/#heroes">Climbers</a></li>
+          <li><a href="/#arsenal">Arsenal</a></li>
+          <li><a href="/#kindred">Kindred</a></li>
+          <li><a href="/devlog/">Devlog</a></li>
+          <li><a href="/press/">Press</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--primary header-cta btn--sm" href="#follow">Follow the climb</a>
+    </div>
+  </div>
+</header>
+<nav class="spine" aria-label="Climb progress">
+  <picture><source type="image/avif" srcset="/assets/img/halden-tower-64.avif 64w" sizes="28px"><img class="spine__emblem" src="/assets/img/halden-tower-64.webp" width="64" height="77" alt="" decoding="async" loading="lazy"></picture>
+  <div class="spine__track" aria-hidden="true"><div class="spine__fill"></div></div>
+  <ol>
+    <li><a href="#top"><span class="spine__label">Foot of the tower</span></a></li>
+    <li><a href="#rootworks"><span class="spine__label">Rootworks</span></a></li>
+    <li><a href="#broodways"><span class="spine__label">Broodways</span></a></li>
+    <li><a href="#crown"><span class="spine__label">The Crown</span></a></li>
+    <li><a href="#heroes"><span class="spine__label">Climbers</span></a></li>
+    <li><a href="#arsenal"><span class="spine__label">Arsenal</span></a></li>
+    <li><a href="#ichor"><span class="spine__label">Ichor</span></a></li>
+    <li><a href="#kindred"><span class="spine__label">Kindred</span></a></li>
+    <li><a href="#antibodies" class="is-foe"><span class="spine__label">Antibodies</span></a></li>
+    <li><a href="#follow"><span class="spine__label">Summit</span></a></li>
+  </ol>
+</nav>
+
+<main id="main" tabindex="-1">
+<section id="top" class="hero" aria-labelledby="hero-title" data-theme-section="ember">
+  <div class="hero__media">
+    <picture>
+<source media="(max-width: 63.99rem)" type="image/avif" srcset="/assets/img/halden-hero-m-480.avif 480w, /assets/img/halden-hero-m-768.avif 768w, /assets/img/halden-hero-m-941.avif 941w" sizes="100vw" width="941" height="1292">
+<source media="(max-width: 63.99rem)" type="image/webp" srcset="/assets/img/halden-hero-m-480.webp 480w, /assets/img/halden-hero-m-768.webp 768w, /assets/img/halden-hero-m-941.webp 941w" sizes="100vw" width="941" height="1292">
+<source media="(max-width: 63.99rem)" srcset="/assets/img/halden-hero-m-480.jpg 480w, /assets/img/halden-hero-m-768.jpg 768w, /assets/img/halden-hero-m-941.jpg 941w" sizes="100vw" width="941" height="1292">
+<source type="image/avif" srcset="/assets/img/halden-hero-d-768.avif 768w, /assets/img/halden-hero-d-1024.avif 1024w, /assets/img/halden-hero-d-1440.avif 1440w, /assets/img/halden-hero-d-1672.avif 1672w" sizes="100vw">
+<source type="image/webp" srcset="/assets/img/halden-hero-d-768.webp 768w, /assets/img/halden-hero-d-1024.webp 1024w, /assets/img/halden-hero-d-1440.webp 1440w, /assets/img/halden-hero-d-1672.webp 1672w" sizes="100vw">
+<img src="/assets/img/halden-hero-d-1024.jpg" srcset="/assets/img/halden-hero-d-768.jpg 768w, /assets/img/halden-hero-d-1024.jpg 1024w, /assets/img/halden-hero-d-1440.jpg 1440w, /assets/img/halden-hero-d-1672.jpg 1672w" sizes="100vw" width="1672" height="941" alt="Key art: Lysa, a horned climber wreathed in cyan light, and Cinder, firing a drum revolver, charge up the golden stairs of the living tower. AI-assisted illustration." fetchpriority="high" decoding="sync">
+</picture>
+    <div class="hero__vignette" aria-hidden="true"></div>
+    <div class="hero__motes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <span class="chip hero__chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span>Key art · AI-assisted illustration</span></span>
+  </div>
+  <div class="hero__content wrap">
+    <div class="hero__text">
+      <p class="eyebrow hero__eyebrow">A first-person roguelite shooter</p>
+      <h1 id="hero-title" class="wordmark">HALDEN</h1>
+      <p class="hero__hook">The tower is alive. Make it remember you.</p>
+      <div class="btn-row hero__ctas">
+        <a class="btn btn--primary" href="https://www.youtube.com/watch?v=CzQmfyqux14" data-play="trailer"><span class="btn__main"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg> Watch the reveal</span><span class="btn__sub">Cinematic trailer · 1:11 · plays from YouTube</span></a>
+        <a class="btn btn--ghost" href="#follow">Follow the climb</a>
+      </div>
+      <p class="hero__lede">Pick a climber. Take what the tower drops. Shoot your way up three strata of roots, ruins and gold — on a new route every run.</p>
+      <p class="hero__status">In development for Windows PC · No release date yet</p>
+    </div>
+  </div>
+  <a class="hero__cue" href="#facts">Begin the climb <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-chevron-down"></use></svg></a>
+</section><section id="facts" class="facts" aria-labelledby="facts-title" data-theme-section="ember">
+  <h2 id="facts-title" class="visually-hidden">HALDEN at a glance</h2>
+  <div class="wrap">
+  <ul class="facts__grid stagger" data-reveal>
+    <li class="plate frame fact"><svg class="ico fact__ico" aria-hidden="true" focusable="false"><use href="#i-users"></use></svg><h3>Solo or squad</h3><p>Solo runs play start to summit. Online co-op is in development and testing.</p></li>
+    <li class="plate frame fact"><svg class="ico fact__ico" aria-hidden="true" focusable="false"><use href="#i-layers"></use></svg><h3>Three strata</h3><p>Rootworks, Broodways and The Crown. Each one ends in a boss.</p></li>
+    <li class="plate frame fact"><svg class="ico fact__ico" aria-hidden="true" focusable="false"><use href="#i-target"></use></svg><h3>30+ weapons</h3><p>Guns, bows, blades, hammers, a chakram, a boomerang — and a book that burns.</p></li>
+    <li class="plate frame fact"><svg class="ico fact__ico" aria-hidden="true" focusable="false"><use href="#i-route"></use></svg><h3>A new route every run</h3><p>Fights, elites, events, a market, and a fire to rest by.</p></li>
+  </ul>
+  </div>
+</section><section id="trailer" class="section" aria-labelledby="trailer-title" data-theme-section="ember">
+  <div class="wrap">
+    <div class="section__head section__head--center" data-reveal>
+      <p class="eyebrow">Reveal trailer</p>
+      <h2 id="trailer-title">Four arrived. None of them looked like heroes.</h2>
+      <p class="muted">Our cinematic reveal. It sets the mood; it isn’t gameplay. For the game as it runs today, look for the in-engine frames further down.</p>
+    </div>
+    <div class="trailer__frame" data-reveal>
+      <a class="trailer__facade" href="https://www.youtube.com/watch?v=CzQmfyqux14" data-yt="CzQmfyqux14">
+        <picture>
+<source type="image/avif" srcset="/assets/img/halden-trailer-poster-768.avif 768w, /assets/img/halden-trailer-poster-1024.avif 1024w, /assets/img/halden-trailer-poster-1440.avif 1440w" sizes="(min-width: 76rem) 1216px, calc(100vw - 2rem)">
+<source type="image/webp" srcset="/assets/img/halden-trailer-poster-768.webp 768w, /assets/img/halden-trailer-poster-1024.webp 1024w, /assets/img/halden-trailer-poster-1440.webp 1440w" sizes="(min-width: 76rem) 1216px, calc(100vw - 2rem)">
+<img src="/assets/img/halden-trailer-poster-1024.jpg" srcset="/assets/img/halden-trailer-poster-768.jpg 768w, /assets/img/halden-trailer-poster-1024.jpg 1024w, /assets/img/halden-trailer-poster-1440.jpg 1440w" sizes="(min-width: 76rem) 1216px, calc(100vw - 2rem)" width="1440" height="810" alt="HALDEN reveal trailer: the two climbers from the key art beneath the gold HALDEN title." loading="lazy" decoding="async">
+</picture>
+        <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Cinematic · AI-assisted visuals · not gameplay</span></span>
+        <span class="trailer__play" aria-hidden="true"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg></span>
+        <span class="trailer__label">Play the reveal trailer <span>· 1:11</span></span>
+      </a>
+    </div>
+    <p class="trailer__meta">
+      <span>Plays from YouTube. Nothing loads from YouTube until you press play. <a href="/privacy.html#website-video">Privacy</a></span>
+      <a href="https://www.youtube.com/watch?v=CzQmfyqux14" rel="noopener">Watch on YouTube ↗</a>
+      <a href="https://www.youtube.com/watch?v=v76YTd-fcH8" rel="noopener">Vertical cut ↗</a>
+    </p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><span></span><b></b><span></span></div><section id="climb" class="section" aria-labelledby="climb-title" data-theme-section="ember">
+  <div class="wrap split split--5-7">
+    <div class="climb__intro" data-reveal>
+      <div class="section__head">
+        <p class="eyebrow">The climb</p>
+        <h2 id="climb-title">One tower. Three strata. The only way out is up.</h2>
+        <p class="whisper"><svg class="vein" viewBox="0 0 14 20" aria-hidden="true" focusable="false"><use href="#i-vein"></use></svg><span>Every climber thinks they are the first.</span></p>
+      </div>
+      <div class="prose">
+        <p>HALDEN is a run-based shooter. You start at the foot of a living tower and fight your way up, room by room, choosing your path on a branching map.</p>
+        <p>Rooms pay out in gold, Ichor and weapons. Elites pay more. Fall, and the run ends — and the tower is waiting at the bottom for your next try.</p>
+      </div>
+      <div class="plate rule mt-2">
+        <p class="eyebrow">Tower rule</p>
+        <h3>It keeps count.</h3>
+        <p>Skip a fight and the tower doesn’t forget. What you dodged can come looking for you later in the climb.</p>
+      </div>
+    </div>
+    <div class="climb__route" data-reveal>
+      <h3>Pick your path</h3>
+      <svg class="route__map" viewBox="0 0 600 410" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="crownGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd27a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <circle class="glow" cx="300" cy="44" r="62"/>
+  <line class="ln" x1="300" y1="382" x2="150" y2="318"/>
+  <line class="ln ln--hot" x1="300" y1="382" x2="300" y2="318"/>
+  <line class="ln" x1="300" y1="382" x2="450" y2="318"/>
+  <line class="ln" x1="150" y1="318" x2="90" y2="250"/>
+  <line class="ln" x1="150" y1="318" x2="222" y2="250"/>
+  <line class="ln ln--hot" x1="300" y1="318" x2="222" y2="250"/>
+  <line class="ln" x1="300" y1="318" x2="378" y2="250"/>
+  <line class="ln" x1="450" y1="318" x2="378" y2="250"/>
+  <line class="ln" x1="450" y1="318" x2="510" y2="250"/>
+  <line class="ln" x1="90" y1="250" x2="160" y2="182"/>
+  <line class="ln" x1="222" y1="250" x2="160" y2="182"/>
+  <line class="ln ln--hot" x1="222" y1="250" x2="300" y2="182"/>
+  <line class="ln" x1="378" y1="250" x2="300" y2="182"/>
+  <line class="ln" x1="378" y1="250" x2="440" y2="182"/>
+  <line class="ln" x1="510" y1="250" x2="440" y2="182"/>
+  <line class="ln" x1="160" y1="182" x2="228" y2="114"/>
+  <line class="ln" x1="300" y1="182" x2="228" y2="114"/>
+  <line class="ln" x1="300" y1="182" x2="372" y2="114"/>
+  <line class="ln" x1="440" y1="182" x2="372" y2="114"/>
+  <line class="ln" x1="228" y1="114" x2="300" y2="44"/>
+  <line class="ln" x1="372" y1="114" x2="300" y2="44"/>
+  <circle class="nd nd--you" cx="300" cy="382" r="9"/>
+  <path class="nd nd--foe" d="M150 306l12 12-12 12-12-12z"/>
+  <path class="nd nd--foe" d="M300 306l12 12-12 12-12-12z"/>
+  <path class="nd nd--gold" d="M450 306l12 12-12 12-12-12z"/>
+  <path class="nd nd--ally" d="M90 238l12 12-12 12-12-12z"/>
+  <path class="nd nd--foe" d="M222 238l12 12-12 12-12-12z"/>
+  <path class="nd nd--foe" d="M378 238l12 12-12 12-12-12z"/>
+  <path class="nd nd--ally" d="M510 238l12 12-12 12-12-12z"/>
+  <path class="nd nd--gold" d="M160 170l12 12-12 12-12-12z"/>
+  <path class="nd nd--foe" d="M300 170l12 12-12 12-12-12z"/>
+  <path class="nd nd--ally" d="M440 170l12 12-12 12-12-12z"/>
+  <path class="nd nd--foe" d="M228 102l12 12-12 12-12-12z"/>
+  <path class="nd nd--ally" d="M372 102l12 12-12 12-12-12z"/>
+  <path class="crown" d="M274 32l13 11 13-19 13 19 13-11-6 30h-40z"/>
+</svg>
+
+      <ul class="tiles stagger" data-reveal>
+        <li class="tile tile--foe"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-fight"></use></svg><h4>Fight</h4><p>Hold the room. Clear every wave.</p></li>
+        <li class="tile tile--foe"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-elite"></use></svg><h4>Elite</h4><p>Harder, stranger, marked by the tower. Worth it.</p></li>
+        <li class="tile tile--gold"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-event"></use></svg><h4>Event</h4><p>A stranger, a bargain, a door. Choose.</p></li>
+        <li class="tile tile--ally"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-coin"></use></svg><h4>The Craw</h4><p>A market inside the tower. Spend your gold.</p></li>
+        <li class="tile tile--ally"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-flame"></use></svg><h4>Rest</h4><p>A campfire hall. Catch your breath.</p></li>
+        <li class="tile tile--foe"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-crown"></use></svg><h4>Boss</h4><p>The stratum&#39;s last word.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="strata">
+  <article id="rootworks" class="stratum" aria-labelledby="rootworks-title" data-theme-section="roots">
+    <div class="wrap stratum__grid">
+      <figure class="fig stratum__fig" data-reveal>
+        <picture>
+<source type="image/avif" srcset="/assets/img/halden-stratum-1-768.avif 768w, /assets/img/halden-stratum-1-1280.avif 1280w, /assets/img/halden-stratum-1-1920.avif 1920w" sizes="(min-width: 64rem) 60vw, 100vw">
+<source type="image/webp" srcset="/assets/img/halden-stratum-1-768.webp 768w, /assets/img/halden-stratum-1-1280.webp 1280w, /assets/img/halden-stratum-1-1920.webp 1920w" sizes="(min-width: 64rem) 60vw, 100vw">
+<img src="/assets/img/halden-stratum-1-1280.jpg" srcset="/assets/img/halden-stratum-1-768.jpg 768w, /assets/img/halden-stratum-1-1280.jpg 1280w, /assets/img/halden-stratum-1-1920.jpg 1920w" sizes="(min-width: 64rem) 60vw, 100vw" width="1920" height="1080" alt="In-engine: overgrown white temple ruins behind hanging willow roots and a green pool." loading="lazy" decoding="async">
+</picture>
+        <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · development build · Sept 2026</span></figcaption>
+      </figure>
+      <div class="stratum__text" data-reveal>
+        <span class="stratum__num" aria-hidden="true">I</span>
+        <p class="eyebrow stratum__label">Stratum I</p>
+        <h3 id="rootworks-title">Rootworks</h3>
+        <p class="stratum__sub">Where the tower drinks</p>
+        <p class="stratum__body">Sunlit temple ruins, flooded channels and caves, all bound in roots. Bone golems guard what the tower swallowed first.</p>
+        <p class="whisper"><svg class="vein" viewBox="0 0 14 20" aria-hidden="true" focusable="false"><use href="#i-vein"></use></svg><span>Here, I am still hungry.</span></p>
+      </div>
+    </div>
+  </article>
+  <article id="broodways" class="stratum stratum--flip" aria-labelledby="broodways-title" data-theme-section="brood">
+    <div class="wrap stratum__grid">
+      <figure class="fig stratum__fig" data-reveal>
+        <picture>
+<source type="image/avif" srcset="/assets/img/halden-stratum-2-768.avif 768w, /assets/img/halden-stratum-2-1280.avif 1280w, /assets/img/halden-stratum-2-1920.avif 1920w" sizes="(min-width: 64rem) 60vw, 100vw">
+<source type="image/webp" srcset="/assets/img/halden-stratum-2-768.webp 768w, /assets/img/halden-stratum-2-1280.webp 1280w, /assets/img/halden-stratum-2-1920.webp 1920w" sizes="(min-width: 64rem) 60vw, 100vw">
+<img src="/assets/img/halden-stratum-2-1280.jpg" srcset="/assets/img/halden-stratum-2-768.jpg 768w, /assets/img/halden-stratum-2-1280.jpg 1280w, /assets/img/halden-stratum-2-1920.jpg 1920w" sizes="(min-width: 64rem) 60vw, 100vw" width="1920" height="1080" alt="In-engine: a stone gatehouse with a lowered portcullis, half-hidden by twisted roots and lit by shafts of sun." loading="lazy" decoding="async">
+</picture>
+        <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · development build · Sept 2026</span></figcaption>
+      </figure>
+      <div class="stratum__text" data-reveal>
+        <span class="stratum__num" aria-hidden="true">II</span>
+        <p class="eyebrow stratum__label">Stratum II</p>
+        <h3 id="broodways-title">Broodways</h3>
+        <p class="stratum__sub">Where the tower keeps what it caught</p>
+        <p class="stratum__body">Higher up, the tower holds what it has taken: temples, villages and castles, swallowed whole and crawling with its brood.</p>
+        <p class="whisper"><svg class="vein" viewBox="0 0 14 20" aria-hidden="true" focusable="false"><use href="#i-vein"></use></svg><span>Here, I keep what I have caught.</span></p>
+      </div>
+    </div>
+  </article>
+  <article id="crown" class="stratum" aria-labelledby="crown-title" data-theme-section="crown">
+    <div class="wrap stratum__grid">
+      <figure class="fig stratum__fig" data-reveal>
+        <picture>
+<source type="image/avif" srcset="/assets/img/halden-stratum-3-768.avif 768w, /assets/img/halden-stratum-3-1280.avif 1280w, /assets/img/halden-stratum-3-1920.avif 1920w" sizes="(min-width: 64rem) 60vw, 100vw">
+<source type="image/webp" srcset="/assets/img/halden-stratum-3-768.webp 768w, /assets/img/halden-stratum-3-1280.webp 1280w, /assets/img/halden-stratum-3-1920.webp 1920w" sizes="(min-width: 64rem) 60vw, 100vw">
+<img src="/assets/img/halden-stratum-3-1280.jpg" srcset="/assets/img/halden-stratum-3-768.jpg 768w, /assets/img/halden-stratum-3-1280.jpg 1280w, /assets/img/halden-stratum-3-1920.jpg 1920w" sizes="(min-width: 64rem) 60vw, 100vw" width="1920" height="1080" alt="In-engine: a long white-and-gold colonnade under a purple storm sky, leading to a temple gate." loading="lazy" decoding="async">
+</picture>
+        <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · development build · Sept 2026</span></figcaption>
+      </figure>
+      <div class="stratum__text" data-reveal>
+        <span class="stratum__num" aria-hidden="true">III</span>
+        <p class="eyebrow stratum__label">Stratum III</p>
+        <h3 id="crown-title">The Crown</h3>
+        <p class="stratum__sub">Where the tower decides</p>
+        <p class="stratum__body">White-gold temples and gardens under a storm sky. The air is thin up here, and everything still alive has been waiting for you.</p>
+        <p class="whisper"><svg class="vein" viewBox="0 0 14 20" aria-hidden="true" focusable="false"><use href="#i-vein"></use></svg><span>Here, I decide who stays.</span></p>
+      </div>
+    </div>
+  </article>
+</div><section id="heroes" class="section" aria-labelledby="heroes-title" data-theme-section="ally">
+  <div class="wrap">
+    <div class="section__head" data-reveal>
+      <p class="eyebrow">The climbers</p>
+      <h2 id="heroes-title">Pick your climber.</h2>
+      <p class="whisper"><svg class="vein" viewBox="0 0 14 20" aria-hidden="true" focusable="false"><use href="#i-vein"></use></svg><span>I have eaten better climbers than these.</span></p>
+      <p>Four climbers, four ways to fight. Each one builds a resource of their own and spends it to turn a bad room around.</p>
+    </div>
+    <ul class="heroes stagger" data-reveal>
+      <li>
+        <article class="hero-card" aria-labelledby="hero-bastion">
+          <figure class="hero-card__media">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-hero-bastion-388.avif 388w, /assets/img/halden-hero-bastion-582.avif 582w" sizes="(min-width: 64rem) 220px, 40vw">
+<img src="/assets/img/halden-hero-bastion-582.webp" srcset="/assets/img/halden-hero-bastion-388.webp 388w, /assets/img/halden-hero-bastion-582.webp 582w" sizes="(min-width: 64rem) 220px, 40vw" width="582" height="900" alt="Bastion, a skeletal wizard in a blue and gold robe, a green spark in one hand." loading="lazy" decoding="async">
+</picture>
+            <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span>AI-assisted illustration</span></figcaption>
+          </figure>
+          <div class="hero-card__body">
+            <p class="hero-card__title">The Bulwark</p>
+            <h3 id="hero-bastion">Bastion <span class="tag tag--ally">Tank</span></h3>
+            <p>Hold a lane, brace against frontal attacks, then spend Pressure to strike back.</p>
+            <p class="res"><span class="tag tag--gold">Resource: Pressure</span></p>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="hero-card" aria-labelledby="hero-cinder">
+          <figure class="hero-card__media">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-hero-cinder-278.avif 278w, /assets/img/halden-hero-cinder-416.avif 416w" sizes="(min-width: 64rem) 220px, 40vw">
+<img src="/assets/img/halden-hero-cinder-416.webp" srcset="/assets/img/halden-hero-cinder-278.webp 278w, /assets/img/halden-hero-cinder-416.webp 416w" sizes="(min-width: 64rem) 220px, 40vw" width="416" height="900" alt="Cinder, a bandaged young fighter in a sleeveless hooded coat, a small flame in his hand." loading="lazy" decoding="async">
+</picture>
+            <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span>AI-assisted illustration</span></figcaption>
+          </figure>
+          <div class="hero-card__body">
+            <p class="hero-card__title">The Pyro</p>
+            <h3 id="hero-cinder">Cinder <span class="tag tag--ally">Assault</span></h3>
+            <p>Build Heat on burning enemies. Stay hot for faster fire, or vent it to break through.</p>
+            <p class="res"><span class="tag tag--gold">Resource: Heat</span></p>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="hero-card" aria-labelledby="hero-lysa">
+          <figure class="hero-card__media">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-hero-lysa-244.avif 244w, /assets/img/halden-hero-lysa-366.avif 366w" sizes="(min-width: 64rem) 220px, 40vw">
+<img src="/assets/img/halden-hero-lysa-366.webp" srcset="/assets/img/halden-hero-lysa-244.webp 244w, /assets/img/halden-hero-lysa-366.webp 366w" sizes="(min-width: 64rem) 220px, 40vw" width="366" height="900" alt="Lysa, a purple-skinned horned climber in a feathered mantle, a cyan spark at her fingertips." loading="lazy" decoding="async">
+</picture>
+            <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span>AI-assisted illustration</span></figcaption>
+          </figure>
+          <div class="hero-card__body">
+            <p class="hero-card__title">The Conduit</p>
+            <h3 id="hero-lysa">Lysa <span class="tag tag--ally">Healer</span></h3>
+            <p>Mark an enemy, earn Grace by attacking, then choose who receives your healing and wards.</p>
+            <p class="res"><span class="tag tag--gold">Resource: Grace</span></p>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="hero-card" aria-labelledby="hero-vesper">
+          <figure class="hero-card__media">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-hero-vesper-306.avif 306w, /assets/img/halden-hero-vesper-459.avif 459w" sizes="(min-width: 64rem) 220px, 40vw">
+<img src="/assets/img/halden-hero-vesper-459.webp" srcset="/assets/img/halden-hero-vesper-306.webp 306w, /assets/img/halden-hero-vesper-459.webp 459w" sizes="(min-width: 64rem) 220px, 40vw" width="459" height="900" alt="Vesper, a silver-haired woman in a grey-green wrap, a violet glow cupped between her hands." loading="lazy" decoding="async">
+</picture>
+            <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span>AI-assisted illustration</span></figcaption>
+          </figure>
+          <div class="hero-card__body">
+            <p class="hero-card__title">The Alchemist</p>
+            <h3 id="hero-vesper">Vesper <span class="tag tag--ally">Combo</span></h3>
+            <p>Prime targets, build Preparation with weapon hits, then spend Reagent to detonate your setup.</p>
+            <p class="res"><span class="tag tag--gold">Resource: Reagent</span></p>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <div class="teaser" data-reveal>
+      <div class="teaser__art"><picture>
+<source type="image/avif" srcset="/assets/img/halden-teaser-357.avif 357w, /assets/img/halden-teaser-536.avif 536w" sizes="120px">
+<img src="/assets/img/halden-teaser-536.webp" srcset="/assets/img/halden-teaser-357.webp 357w, /assets/img/halden-teaser-536.webp 536w" sizes="120px" width="536" height="900" alt="The dark silhouette of a fifth climber, still in development." loading="lazy" decoding="async">
+</picture></div>
+      <div>
+        <h3>A fifth climber <span class="tag tag--ally">In development</span></h3>
+        <p>Someone else is on the way up.</p>
+      </div>
+    </div>
+    <p class="footnote">Character art (AI-assisted illustration). Names and looks may change before release.</p>
+  </div>
+</section><section id="arsenal" class="section" aria-labelledby="arsenal-title" data-theme-section="ember">
+  <div class="wrap">
+    <div class="section__head" data-reveal>
+      <p class="eyebrow">The arsenal</p>
+      <h2 id="arsenal-title">Thirty-odd weapons. No two fight alike.</h2>
+      <p class="whisper"><svg class="vein" viewBox="0 0 14 20" aria-hidden="true" focusable="false"><use href="#i-vein"></use></svg><span>Take what I drop. Show me what you do with it.</span></p>
+      <p>Guns and bows, blades and hammers, a chakram that comes home and a book that sets the room alight. Weapons drop in rising rarity, and burn, shock and poison run through the arsenal.</p>
+    </div>
+    <ul class="weapons stagger" data-reveal>
+      <li class="weapon">
+        <figure class="weapon__media">
+          <picture>
+<source type="image/avif" srcset="/assets/img/halden-weapon-kitsune-400.avif 400w, /assets/img/halden-weapon-kitsune-640.avif 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<source type="image/webp" srcset="/assets/img/halden-weapon-kitsune-400.webp 400w, /assets/img/halden-weapon-kitsune-640.webp 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<img src="/assets/img/halden-weapon-kitsune-640.jpg" srcset="/assets/img/halden-weapon-kitsune-400.jpg 400w, /assets/img/halden-weapon-kitsune-640.jpg 640w" sizes="(min-width: 64rem) 22vw, 46vw" width="640" height="480" alt="Kitsune, a red and black hand cannon with a fox mask on the frame." loading="lazy" decoding="async">
+</picture>
+          <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Concept art · AI-assisted</span></figcaption>
+        </figure>
+        <div class="weapon__body">
+          <h3>Kitsune</h3>
+          <span class="tag tag--gold">Hand Cannon</span>
+          <p>A fox-fire hand cannon. One heavy round at a time, and each one lands like a verdict.</p>
+        </div>
+      </li>
+      <li class="weapon">
+        <figure class="weapon__media">
+          <picture>
+<source type="image/avif" srcset="/assets/img/halden-weapon-kamaitachi-400.avif 400w, /assets/img/halden-weapon-kamaitachi-640.avif 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<source type="image/webp" srcset="/assets/img/halden-weapon-kamaitachi-400.webp 400w, /assets/img/halden-weapon-kamaitachi-640.webp 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<img src="/assets/img/halden-weapon-kamaitachi-640.jpg" srcset="/assets/img/halden-weapon-kamaitachi-400.jpg 400w, /assets/img/halden-weapon-kamaitachi-640.jpg 640w" sizes="(min-width: 64rem) 22vw, 46vw" width="640" height="480" alt="Kamaitachi, three curved sickle blades joined at a bronze ring." loading="lazy" decoding="async">
+</picture>
+          <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Concept art · AI-assisted</span></figcaption>
+        </figure>
+        <div class="weapon__body">
+          <h3>Kamaitachi</h3>
+          <span class="tag tag--gold">Sickle Boomerang</span>
+          <p>Three sickle-blades leave the wrist at once and come home. Brutal up close, slow to return.</p>
+        </div>
+      </li>
+      <li class="weapon">
+        <figure class="weapon__media">
+          <picture>
+<source type="image/avif" srcset="/assets/img/halden-weapon-bishamon-400.avif 400w, /assets/img/halden-weapon-bishamon-640.avif 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<source type="image/webp" srcset="/assets/img/halden-weapon-bishamon-400.webp 400w, /assets/img/halden-weapon-bishamon-640.webp 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<img src="/assets/img/halden-weapon-bishamon-640.jpg" srcset="/assets/img/halden-weapon-bishamon-400.jpg 400w, /assets/img/halden-weapon-bishamon-640.jpg 640w" sizes="(min-width: 64rem) 22vw, 46vw" width="640" height="480" alt="Bishamon, a long war hammer with a demon-faced stone head." loading="lazy" decoding="async">
+</picture>
+          <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Concept art · AI-assisted</span></figcaption>
+        </figure>
+        <div class="weapon__body">
+          <h3>Bishamon</h3>
+          <span class="tag tag--gold">War Hammer</span>
+          <p>A war-god&#39;s hammer. Raise it, break the floor, and hold the quake around you.</p>
+        </div>
+      </li>
+      <li class="weapon">
+        <figure class="weapon__media">
+          <picture>
+<source type="image/avif" srcset="/assets/img/halden-weapon-raijin-400.avif 400w, /assets/img/halden-weapon-raijin-640.avif 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<source type="image/webp" srcset="/assets/img/halden-weapon-raijin-400.webp 400w, /assets/img/halden-weapon-raijin-640.webp 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<img src="/assets/img/halden-weapon-raijin-640.jpg" srcset="/assets/img/halden-weapon-raijin-400.jpg 400w, /assets/img/halden-weapon-raijin-640.jpg 640w" sizes="(min-width: 64rem) 22vw, 46vw" width="640" height="480" alt="Raijin, a slender bow of glowing ember-red wood." loading="lazy" decoding="async">
+</picture>
+          <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Concept art · AI-assisted</span></figcaption>
+        </figure>
+        <div class="weapon__body">
+          <h3>Raijin</h3>
+          <span class="tag tag--gold">Ember Bow</span>
+          <p>An ember bow. Drawn slow and loosed once — the arrow punches through the line.</p>
+        </div>
+      </li>
+      <li class="weapon">
+        <figure class="weapon__media">
+          <picture>
+<source type="image/avif" srcset="/assets/img/halden-weapon-chochin-400.avif 400w, /assets/img/halden-weapon-chochin-640.avif 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<source type="image/webp" srcset="/assets/img/halden-weapon-chochin-400.webp 400w, /assets/img/halden-weapon-chochin-640.webp 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<img src="/assets/img/halden-weapon-chochin-640.jpg" srcset="/assets/img/halden-weapon-chochin-400.jpg 400w, /assets/img/halden-weapon-chochin-640.jpg 640w" sizes="(min-width: 64rem) 22vw, 46vw" width="640" height="480" alt="Chochin, an open book bound in red leather with a glowing lantern at its spine." loading="lazy" decoding="async">
+</picture>
+          <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Concept art · AI-assisted</span></figcaption>
+        </figure>
+        <div class="weapon__body">
+          <h3>Chochin</h3>
+          <span class="tag tag--gold">Lantern-Book</span>
+          <p>A lantern-book of fire. Low per-hit, but everything it touches burns.</p>
+        </div>
+      </li>
+      <li class="weapon">
+        <figure class="weapon__media">
+          <picture>
+<source type="image/avif" srcset="/assets/img/halden-weapon-kagero-400.avif 400w, /assets/img/halden-weapon-kagero-640.avif 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<source type="image/webp" srcset="/assets/img/halden-weapon-kagero-400.webp 400w, /assets/img/halden-weapon-kagero-640.webp 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<img src="/assets/img/halden-weapon-kagero-640.jpg" srcset="/assets/img/halden-weapon-kagero-400.jpg 400w, /assets/img/halden-weapon-kagero-640.jpg 640w" sizes="(min-width: 64rem) 22vw, 46vw" width="640" height="480" alt="Kagero, a round chakram of violet blades around a leather grip." loading="lazy" decoding="async">
+</picture>
+          <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Concept art · AI-assisted</span></figcaption>
+        </figure>
+        <div class="weapon__body">
+          <h3>Kagero</h3>
+          <span class="tag tag--gold">Spirit Chakram</span>
+          <p>Returning spirit-chakram. Crackling blades that leap from foe to foe.</p>
+        </div>
+      </li>
+      <li class="weapon">
+        <figure class="weapon__media">
+          <picture>
+<source type="image/avif" srcset="/assets/img/halden-weapon-tsukuyomi-400.avif 400w, /assets/img/halden-weapon-tsukuyomi-640.avif 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<source type="image/webp" srcset="/assets/img/halden-weapon-tsukuyomi-400.webp 400w, /assets/img/halden-weapon-tsukuyomi-640.webp 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<img src="/assets/img/halden-weapon-tsukuyomi-640.jpg" srcset="/assets/img/halden-weapon-tsukuyomi-400.jpg 400w, /assets/img/halden-weapon-tsukuyomi-640.jpg 640w" sizes="(min-width: 64rem) 22vw, 46vw" width="640" height="480" alt="Tsukuyomi no Te, a white and violet cannon with a wide barrel." loading="lazy" decoding="async">
+</picture>
+          <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Concept art · AI-assisted</span></figcaption>
+        </figure>
+        <div class="weapon__body">
+          <h3>Tsukuyomi no Te</h3>
+          <span class="tag tag--gold">Void Cannon</span>
+          <p>The moon&#39;s own hand. Slow voids that gather the crowd, then collapse.</p>
+        </div>
+      </li>
+      <li class="weapon">
+        <figure class="weapon__media">
+          <picture>
+<source type="image/avif" srcset="/assets/img/halden-weapon-byakko-400.avif 400w, /assets/img/halden-weapon-byakko-640.avif 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<source type="image/webp" srcset="/assets/img/halden-weapon-byakko-400.webp 400w, /assets/img/halden-weapon-byakko-640.webp 640w" sizes="(min-width: 64rem) 22vw, 46vw">
+<img src="/assets/img/halden-weapon-byakko-640.jpg" srcset="/assets/img/halden-weapon-byakko-400.jpg 400w, /assets/img/halden-weapon-byakko-640.jpg 640w" sizes="(min-width: 64rem) 22vw, 46vw" width="640" height="480" alt="Byakko, a long polearm with a jagged silver blade." loading="lazy" decoding="async">
+</picture>
+          <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Concept art · AI-assisted</span></figcaption>
+        </figure>
+        <div class="weapon__body">
+          <h3>Byakko</h3>
+          <span class="tag tag--gold">Storm Polearm</span>
+          <p>A storm-polearm you throw. It leaves your hand and the next one forms in it.</p>
+        </div>
+      </li>
+    </ul>
+    <p class="footnote">Weapon concept art (AI-assisted illustration). The in-game models are built from these designs.</p>
+  </div>
+</section><section id="ichor" class="section" aria-labelledby="ichor-title" data-theme-section="ember">
+  <div class="wrap split">
+    <div data-reveal>
+      <div class="section__head">
+        <p class="eyebrow">Ichor</p>
+        <h2 id="ichor-title">Accuracy pays.</h2>
+        <p class="whisper"><svg class="vein" viewBox="0 0 14 20" aria-hidden="true" focusable="false"><use href="#i-vein"></use></svg><span>My blood is amber. Spill it well.</span></p>
+      </div>
+      <p class="narrow">The tower bleeds Ichor, and it rewards precision, not noise. Every hit feeds your Ichor. Headshots feed it faster. Fill it to 100 and SURGE: a blast that yanks the nearest enemies in and leaves them wide open. Ichor carries from room to room, so a clean fight sets up the next one.</p>
+    </div>
+    <div class="plate ichor__panel" data-reveal>
+      <div class="meter" role="img" aria-label="Ichor meter filling to 100, then SURGE">
+        <span class="meter__surge" aria-hidden="true">SURGE</span>
+        <div class="meter__track" aria-hidden="true"><div class="meter__fill"></div><div class="meter__ticks"><i></i><i></i><i></i></div></div>
+        <div class="meter__labels num" aria-hidden="true"><span>0</span><span>100</span></div>
+      </div>
+      <ul class="ichor__facts" aria-label="How Ichor fills">
+        <li><b>Hit</b>Every hit feeds it.</li>
+        <li><b>Headshot</b>Feeds it faster.</li>
+        <li><b>100</b>SURGE.</li>
+      </ul>
+    </div>
+  </div>
+</section><section id="kindred" class="section" aria-labelledby="kindred-title" data-theme-section="ally">
+  <div class="wrap">
+    <div class="section__head section__head--center" data-reveal>
+      <p class="eyebrow">Kindred</p>
+      <h2 id="kindred-title">Not everything in the tower wants you dead.</h2>
+      <p>Kindred are small creatures you meet on the climb. Greet one, and from your next run it climbs at your side — one companion per climber. You don’t buy them. You find them.</p>
+    </div>
+    <figure class="kindred-fig">
+      <ul class="kindred stagger" data-reveal>
+        <li class="kin">
+          <div class="kin__ring">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-kindred-mote-192.avif 192w, /assets/img/halden-kindred-mote-320.avif 320w" sizes="(min-width: 40rem) 116px, 96px">
+<img src="/assets/img/halden-kindred-mote-320.webp" srcset="/assets/img/halden-kindred-mote-192.webp 192w, /assets/img/halden-kindred-mote-320.webp 320w" sizes="(min-width: 40rem) 116px, 96px" width="320" height="320" alt="Mote, a pale teal spirit curled like a wave, with two round eyes." loading="lazy" decoding="async">
+</picture>
+            <img class="kin__frame" src="/assets/img/halden-ring-320.webp" srcset="/assets/img/halden-ring-320.webp 320w, /assets/img/halden-ring-480.webp 480w" sizes="160px" width="480" height="480" alt="" loading="lazy" decoding="async">
+          </div>
+          <h3>Mote</h3>
+          <p class="whisper whisper--ally">It gathers what the climb forgets.</p>
+        </li>
+        <li class="kin">
+          <div class="kin__ring">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-kindred-lantern-192.avif 192w, /assets/img/halden-kindred-lantern-320.avif 320w" sizes="(min-width: 40rem) 116px, 96px">
+<img src="/assets/img/halden-kindred-lantern-320.webp" srcset="/assets/img/halden-kindred-lantern-192.webp 192w, /assets/img/halden-kindred-lantern-320.webp 320w" sizes="(min-width: 40rem) 116px, 96px" width="320" height="320" alt="Lantern, a stone lotus cradling a cold blue flame." loading="lazy" decoding="async">
+</picture>
+            <img class="kin__frame" src="/assets/img/halden-ring-320.webp" srcset="/assets/img/halden-ring-320.webp 320w, /assets/img/halden-ring-480.webp 480w" sizes="160px" width="480" height="480" alt="" loading="lazy" decoding="async">
+          </div>
+          <h3>Lantern</h3>
+          <p class="whisper whisper--ally">What it lights, you may take.</p>
+        </li>
+        <li class="kin">
+          <div class="kin__ring">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-kindred-wisp-192.avif 192w, /assets/img/halden-kindred-wisp-320.avif 320w" sizes="(min-width: 40rem) 116px, 96px">
+<img src="/assets/img/halden-kindred-wisp-320.webp" srcset="/assets/img/halden-kindred-wisp-192.webp 192w, /assets/img/halden-kindred-wisp-320.webp 320w" sizes="(min-width: 40rem) 116px, 96px" width="320" height="320" alt="Wisp, a single cold blue flame." loading="lazy" decoding="async">
+</picture>
+            <img class="kin__frame" src="/assets/img/halden-ring-320.webp" srcset="/assets/img/halden-ring-320.webp 320w, /assets/img/halden-ring-480.webp 480w" sizes="160px" width="480" height="480" alt="" loading="lazy" decoding="async">
+          </div>
+          <h3>Wisp</h3>
+          <p class="whisper whisper--ally">A cold flame that remembers every wound.</p>
+        </li>
+        <li class="kin">
+          <div class="kin__ring">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-kindred-static-192.avif 192w, /assets/img/halden-kindred-static-320.avif 320w" sizes="(min-width: 40rem) 116px, 96px">
+<img src="/assets/img/halden-kindred-static-320.webp" srcset="/assets/img/halden-kindred-static-192.webp 192w, /assets/img/halden-kindred-static-320.webp 320w" sizes="(min-width: 40rem) 116px, 96px" width="320" height="320" alt="Static, a jellyfish-like drifter with a storm-streaked blue bell." loading="lazy" decoding="async">
+</picture>
+            <img class="kin__frame" src="/assets/img/halden-ring-320.webp" srcset="/assets/img/halden-ring-320.webp 320w, /assets/img/halden-ring-480.webp 480w" sizes="160px" width="480" height="480" alt="" loading="lazy" decoding="async">
+          </div>
+          <h3>Static</h3>
+          <p class="whisper whisper--ally">Two wounds, one storm between them.</p>
+        </li>
+        <li class="kin">
+          <div class="kin__ring">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-kindred-kit-192.avif 192w, /assets/img/halden-kindred-kit-320.avif 320w" sizes="(min-width: 40rem) 116px, 96px">
+<img src="/assets/img/halden-kindred-kit-320.webp" srcset="/assets/img/halden-kindred-kit-192.webp 192w, /assets/img/halden-kindred-kit-320.webp 320w" sizes="(min-width: 40rem) 116px, 96px" width="320" height="320" alt="Kit, a small big-eared fox creature with glowing eyes." loading="lazy" decoding="async">
+</picture>
+            <img class="kin__frame" src="/assets/img/halden-ring-320.webp" srcset="/assets/img/halden-ring-320.webp 320w, /assets/img/halden-ring-480.webp 480w" sizes="160px" width="480" height="480" alt="" loading="lazy" decoding="async">
+          </div>
+          <h3>Kit</h3>
+          <p class="whisper whisper--ally">It pockets what the tower drops.</p>
+        </li>
+        <li class="kin">
+          <div class="kin__ring">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-kindred-tinker-192.avif 192w, /assets/img/halden-kindred-tinker-320.avif 320w" sizes="(min-width: 40rem) 116px, 96px">
+<img src="/assets/img/halden-kindred-tinker-320.webp" srcset="/assets/img/halden-kindred-tinker-192.webp 192w, /assets/img/halden-kindred-tinker-320.webp 320w" sizes="(min-width: 40rem) 116px, 96px" width="320" height="320" alt="Tinker, a little wind-up furnace with a toothy grin." loading="lazy" decoding="async">
+</picture>
+            <img class="kin__frame" src="/assets/img/halden-ring-320.webp" srcset="/assets/img/halden-ring-320.webp 320w, /assets/img/halden-ring-480.webp 480w" sizes="160px" width="480" height="480" alt="" loading="lazy" decoding="async">
+          </div>
+          <h3>Tinker</h3>
+          <p class="whisper whisper--ally">Wind me, and your gun remembers how to hurry.</p>
+        </li>
+        <li class="kin">
+          <div class="kin__ring">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-kindred-acolyte-192.avif 192w, /assets/img/halden-kindred-acolyte-320.avif 320w" sizes="(min-width: 40rem) 116px, 96px">
+<img src="/assets/img/halden-kindred-acolyte-320.webp" srcset="/assets/img/halden-kindred-acolyte-192.webp 192w, /assets/img/halden-kindred-acolyte-320.webp 320w" sizes="(min-width: 40rem) 116px, 96px" width="320" height="320" alt="Acolyte, a stone owl inside a pale violet ring." loading="lazy" decoding="async">
+</picture>
+            <img class="kin__frame" src="/assets/img/halden-ring-320.webp" srcset="/assets/img/halden-ring-320.webp 320w, /assets/img/halden-ring-480.webp 480w" sizes="160px" width="480" height="480" alt="" loading="lazy" decoding="async">
+          </div>
+          <h3>Acolyte</h3>
+          <p class="whisper whisper--ally">I keep the one ward a climber taught me.</p>
+        </li>
+        <li class="kin">
+          <div class="kin__ring">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-kindred-taiko-192.avif 192w, /assets/img/halden-kindred-taiko-320.avif 320w" sizes="(min-width: 40rem) 116px, 96px">
+<img src="/assets/img/halden-kindred-taiko-320.webp" srcset="/assets/img/halden-kindred-taiko-192.webp 192w, /assets/img/halden-kindred-taiko-320.webp 320w" sizes="(min-width: 40rem) 116px, 96px" width="320" height="320" alt="Taiko, three small drum spirits in a row." loading="lazy" decoding="async">
+</picture>
+            <img class="kin__frame" src="/assets/img/halden-ring-320.webp" srcset="/assets/img/halden-ring-320.webp 320w, /assets/img/halden-ring-480.webp 480w" sizes="160px" width="480" height="480" alt="" loading="lazy" decoding="async">
+          </div>
+          <h3>Taiko</h3>
+          <p class="whisper whisper--ally">Three drums, one heart. Shoot on the beat.</p>
+        </li>
+      </ul>
+      <figcaption><span class="chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>Rendered from the in-game models</span></span></figcaption>
+    </figure>
+  </div>
+</section><section id="antibodies" class="section" aria-labelledby="antibodies-title" data-theme-section="foe">
+  <div class="wrap">
+    <div class="section__head" data-reveal>
+      <p class="eyebrow">The Antibodies</p>
+      <h2 id="antibodies-title">The tower fights back.</h2>
+      <p class="whisper"><svg class="vein" viewBox="0 0 14 20" aria-hidden="true" focusable="false"><use href="#i-vein"></use></svg><span>You are a splinter. I know what to do with splinters.</span></p>
+      <p>Everything that comes at you is the tower defending itself. Swarms that flood a room. Hounds that charge. Bulbs that spit. Shield-bearers, hex-casters and bombers. And at the top of every stratum, something much bigger.</p>
+    </div>
+    <div class="ab-media" data-reveal>
+      <figure class="fig"><picture>
+<source type="image/avif" srcset="/assets/img/halden-boss-768.avif 768w, /assets/img/halden-boss-1280.avif 1280w, /assets/img/halden-boss-1920.avif 1920w" sizes="(min-width: 64rem) 50vw, 100vw">
+<source type="image/webp" srcset="/assets/img/halden-boss-768.webp 768w, /assets/img/halden-boss-1280.webp 1280w, /assets/img/halden-boss-1920.webp 1920w" sizes="(min-width: 64rem) 50vw, 100vw">
+<img src="/assets/img/halden-boss-1280.jpg" srcset="/assets/img/halden-boss-768.jpg 768w, /assets/img/halden-boss-1280.jpg 1280w, /assets/img/halden-boss-1920.jpg 1920w" sizes="(min-width: 64rem) 50vw, 100vw" width="1920" height="1080" alt="In-engine: a giant skeleton, its bones cracked with molten orange light, roars beneath a violet sky." loading="lazy" decoding="async">
+</picture><figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · development build · Sept 2026</span></figcaption></figure>
+      <figure class="fig"><picture>
+<source type="image/avif" srcset="/assets/img/halden-golem-768.avif 768w, /assets/img/halden-golem-1280.avif 1280w" sizes="(min-width: 64rem) 25vw, 100vw">
+<source type="image/webp" srcset="/assets/img/halden-golem-768.webp 768w, /assets/img/halden-golem-1280.webp 1280w" sizes="(min-width: 64rem) 25vw, 100vw">
+<img src="/assets/img/halden-golem-1280.jpg" srcset="/assets/img/halden-golem-768.jpg 768w, /assets/img/halden-golem-1280.jpg 1280w" sizes="(min-width: 64rem) 25vw, 100vw" width="1280" height="720" alt="In-engine: a bone golem lunges forward in front of overgrown temple ruins." loading="lazy" decoding="async">
+</picture><figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · development build · Sept 2026</span></figcaption></figure>
+    </div>
+    <div class="ab-row">
+      <div data-reveal>
+        <h3 class="visually-hidden">Some of what you’ll meet</h3>
+        <ul class="ab-chips">
+          <li class="ab-chip">Rootling <span>· swarm</span></li>
+          <li class="ab-chip">Moonhound <span>· charger</span></li>
+          <li class="ab-chip">Blightbulb <span>· spitter</span></li>
+          <li class="ab-chip">Gatekeeper <span>· shield</span></li>
+          <li class="ab-chip">Hexling <span>· caster</span></li>
+          <li class="ab-chip">Sapper <span>· bomber</span></li>
+        </ul>
+      </div>
+      <div class="elites" data-reveal>
+        <h3>Elites wear the tower’s marks.</h3>
+        <ul>
+          <li><picture><source type="image/avif" srcset="/assets/img/halden-elite-volatile-96.avif 96w, /assets/img/halden-elite-volatile-192.avif 192w" sizes="48px"><img src="/assets/img/halden-elite-volatile-96.webp" srcset="/assets/img/halden-elite-volatile-96.webp 96w, /assets/img/halden-elite-volatile-192.webp 192w" sizes="48px" width="48" height="48" alt="" loading="lazy" decoding="async"></picture>Volatile</li>
+          <li><picture><source type="image/avif" srcset="/assets/img/halden-elite-shielded-96.avif 96w, /assets/img/halden-elite-shielded-192.avif 192w" sizes="48px"><img src="/assets/img/halden-elite-shielded-96.webp" srcset="/assets/img/halden-elite-shielded-96.webp 96w, /assets/img/halden-elite-shielded-192.webp 192w" sizes="48px" width="48" height="48" alt="" loading="lazy" decoding="async"></picture>Shielded</li>
+          <li><picture><source type="image/avif" srcset="/assets/img/halden-elite-haste-96.avif 96w, /assets/img/halden-elite-haste-192.avif 192w" sizes="48px"><img src="/assets/img/halden-elite-haste-96.webp" srcset="/assets/img/halden-elite-haste-96.webp 96w, /assets/img/halden-elite-haste-192.webp 192w" sizes="48px" width="48" height="48" alt="" loading="lazy" decoding="async"></picture>Haste</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section><section id="coop" class="section" aria-labelledby="coop-title" data-theme-section="ally">
+  <div class="wrap split split--5-7">
+    <div data-reveal>
+      <div class="section__head">
+        <p class="eyebrow">Co-op</p>
+        <h2 id="coop-title">Built for a squad. Tested before it’s promised.</h2>
+      </div>
+      <p class="narrow">HALDEN is designed for online co-op, planned for up to four players: shared fights, a squad that covers each other’s blind side, and climbers who pick each other up. Co-op is in development and testing right now. We’ll call it ready when it works between real PCs over the internet — not before.</p>
+      <p class="pill status-pill"><span class="dot" aria-hidden="true"></span>Status: in testing</p>
+    </div>
+    <figure class="fig coop__fig" data-reveal><picture>
+<source type="image/avif" srcset="/assets/img/halden-coop-768.avif 768w, /assets/img/halden-coop-1280.avif 1280w, /assets/img/halden-coop-1920.avif 1920w" sizes="(min-width: 64rem) 55vw, 100vw">
+<source type="image/webp" srcset="/assets/img/halden-coop-768.webp 768w, /assets/img/halden-coop-1280.webp 1280w, /assets/img/halden-coop-1920.webp 1920w" sizes="(min-width: 64rem) 55vw, 100vw">
+<img src="/assets/img/halden-coop-1280.jpg" srcset="/assets/img/halden-coop-768.jpg 768w, /assets/img/halden-coop-1280.jpg 1280w, /assets/img/halden-coop-1920.jpg 1920w" sizes="(min-width: 64rem) 55vw, 100vw" width="1920" height="1080" alt="In-engine: the four climbers stand together on a temple stairway." loading="lazy" decoding="async">
+</picture><figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · development build · Sept 2026</span></figcaption></figure>
+  </div>
+</section><section id="gallery" class="section" aria-labelledby="gallery-title" data-theme-section="ember">
+  <div class="wrap">
+    <div class="section__head" data-reveal>
+      <p class="eyebrow">From the engine</p>
+      <h2 id="gallery-title">Real frames from a game in progress.</h2>
+      <p>Captured in the development build. Lighting, models and effects are still changing — this is the game as it runs, not a painting of it.</p>
+    </div>
+    <ul class="gallery stagger" data-reveal>
+      <li class="gallery__g1">
+        <figure class="fig-plain">
+          <a href="/assets/img/halden-g1-full.jpg" data-lb data-avif="/assets/img/halden-g1-full.avif" data-w="2359" data-h="1328" data-chip="In-engine · Sept 2026" data-alt="First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path.">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-g1-768.avif 768w, /assets/img/halden-g1-1024.avif 1024w" sizes="(min-width: 64rem) 50vw, 100vw">
+<source type="image/webp" srcset="/assets/img/halden-g1-768.webp 768w, /assets/img/halden-g1-1024.webp 1024w" sizes="(min-width: 64rem) 50vw, 100vw">
+<img src="/assets/img/halden-g1-1024.jpg" srcset="/assets/img/halden-g1-768.jpg 768w, /assets/img/halden-g1-1024.jpg 1024w" sizes="(min-width: 64rem) 50vw, 100vw" width="1024" height="576" alt="First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path." loading="lazy" decoding="async">
+</picture>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="visually-hidden">Open full size</span>
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure class="fig-plain">
+          <a href="/assets/img/halden-g2-full.jpg" data-lb data-avif="/assets/img/halden-g2-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="Golden stairs and arched halls beside a waterfall in a flowering valley.">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-g2-480.avif 480w, /assets/img/halden-g2-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<source type="image/webp" srcset="/assets/img/halden-g2-480.webp 480w, /assets/img/halden-g2-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<img src="/assets/img/halden-g2-768.jpg" srcset="/assets/img/halden-g2-480.jpg 480w, /assets/img/halden-g2-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="Golden stairs and arched halls beside a waterfall in a flowering valley." loading="lazy" decoding="async">
+</picture>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="visually-hidden">Open full size</span>
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure class="fig-plain">
+          <a href="/assets/img/halden-g3-full.jpg" data-lb data-avif="/assets/img/halden-g3-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A grassy path through bamboo and blue flowers toward a red torii gate under a dusk sky.">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-g3-480.avif 480w, /assets/img/halden-g3-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<source type="image/webp" srcset="/assets/img/halden-g3-480.webp 480w, /assets/img/halden-g3-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<img src="/assets/img/halden-g3-768.jpg" srcset="/assets/img/halden-g3-480.jpg 480w, /assets/img/halden-g3-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="A grassy path through bamboo and blue flowers toward a red torii gate under a dusk sky." loading="lazy" decoding="async">
+</picture>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="visually-hidden">Open full size</span>
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure class="fig-plain">
+          <a href="/assets/img/halden-g4-full.jpg" data-lb data-avif="/assets/img/halden-g4-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A rope bridge crosses a mossy canyon above glowing green water.">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-g4-480.avif 480w, /assets/img/halden-g4-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<source type="image/webp" srcset="/assets/img/halden-g4-480.webp 480w, /assets/img/halden-g4-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<img src="/assets/img/halden-g4-768.jpg" srcset="/assets/img/halden-g4-480.jpg 480w, /assets/img/halden-g4-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="A rope bridge crosses a mossy canyon above glowing green water." loading="lazy" decoding="async">
+</picture>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="visually-hidden">Open full size</span>
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure class="fig-plain">
+          <a href="/assets/img/halden-g5-full.jpg" data-lb data-avif="/assets/img/halden-g5-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A frontier town of timber, pipes and water towers among red desert rock.">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-g5-480.avif 480w, /assets/img/halden-g5-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<source type="image/webp" srcset="/assets/img/halden-g5-480.webp 480w, /assets/img/halden-g5-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<img src="/assets/img/halden-g5-768.jpg" srcset="/assets/img/halden-g5-480.jpg 480w, /assets/img/halden-g5-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="A frontier town of timber, pipes and water towers among red desert rock." loading="lazy" decoding="async">
+</picture>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="visually-hidden">Open full size</span>
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure class="fig-plain">
+          <a href="/assets/img/halden-g6-full.jpg" data-lb data-avif="/assets/img/halden-g6-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A golden temple gate at the end of a dusty jungle path.">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-g6-480.avif 480w, /assets/img/halden-g6-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<source type="image/webp" srcset="/assets/img/halden-g6-480.webp 480w, /assets/img/halden-g6-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<img src="/assets/img/halden-g6-768.jpg" srcset="/assets/img/halden-g6-480.jpg 480w, /assets/img/halden-g6-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="A golden temple gate at the end of a dusty jungle path." loading="lazy" decoding="async">
+</picture>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="visually-hidden">Open full size</span>
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure class="fig-plain">
+          <a href="/assets/img/halden-g7-full.jpg" data-lb data-avif="/assets/img/halden-g7-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="Aerial view of jungle ruins and stone towers among red cliffs.">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-g7-480.avif 480w, /assets/img/halden-g7-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<source type="image/webp" srcset="/assets/img/halden-g7-480.webp 480w, /assets/img/halden-g7-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<img src="/assets/img/halden-g7-768.jpg" srcset="/assets/img/halden-g7-480.jpg 480w, /assets/img/halden-g7-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="Aerial view of jungle ruins and stone towers among red cliffs." loading="lazy" decoding="async">
+</picture>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="visually-hidden">Open full size</span>
+          </a>
+        </figure>
+      </li>
+      <li class="gallery__note">
+        <p class="eyebrow">Full resolution</p>
+        <p>All thirteen in-engine captures on this page, full size and free to use for coverage, are in the press kit.</p>
+        <p><a href="/press/#images">Open the press kit →</a></p>
+      </li>
+    </ul>
+  </div>
+  <dialog id="lightbox" class="lightbox" aria-labelledby="lb-cap">
+    <div class="lightbox__inner">
+      <figure>
+        <picture><source type="image/avif"><img src="/assets/img/halden-g1-768.jpg" width="2359" height="1328" alt="First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path." loading="lazy" decoding="async"></picture>
+        <figcaption><span class="lightbox__count" id="lb-count">1 / 7</span><span id="lb-cap">In-engine · Sept 2026 — First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path.</span></figcaption>
+      </figure>
+      <button class="lb-btn lb-prev" type="button" aria-label="Previous image (7 of 7)"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-left"></use></svg></button>
+      <button class="lb-btn lb-next" type="button" aria-label="Next image (2 of 7)"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-right"></use></svg></button>
+      <button class="lb-btn lb-close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+    </div>
+  </dialog>
+</section>
+
+<div class="divider" aria-hidden="true"><span></span><b></b><span></span></div><section id="answers" class="section" aria-labelledby="answers-title" data-theme-section="ember">
+  <div class="wrap">
+    <div class="section__head section__head--center" data-reveal>
+      <p class="eyebrow">Straight answers</p>
+      <h2 id="answers-title">Before you ask.</h2>
+    </div>
+    <ul class="answers stagger" data-reveal>
+      <li class="plate frame answer"><h3>When does HALDEN come out?</h3><p>No release date yet. We’ll announce one when we can keep it.</p></li>
+      <li class="plate frame answer"><h3>Which platforms?</h3><p>Windows PC. No other platforms are announced.</p></li>
+      <li class="plate frame answer"><h3>Can I play with friends?</h3><p>That’s the plan. Online co-op is in development and testing now. Solo runs already play start to finish in the development build.</p></li>
+      <li class="plate frame answer"><h3>How much will it cost?</h3><p>No price is set yet.</p></li>
+    </ul>
+    <p class="answers__more"><a href="/faq/">All questions <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-right"></use></svg></a></p>
+  </div>
+</section><section id="follow" class="section follow" aria-labelledby="follow-title" data-theme-section="ember">
+  <div class="wrap">
+    <picture><source type="image/avif" srcset="/assets/img/halden-tower-285.avif 285w, /assets/img/halden-tower-570.avif 570w" sizes="220px"><img class="follow__emblem" src="/assets/img/halden-tower-285.webp" srcset="/assets/img/halden-tower-285.webp 285w, /assets/img/halden-tower-570.webp 570w" sizes="220px" width="570" height="682" alt="" loading="lazy" decoding="async"></picture>
+    <div class="section__head section__head--center" data-reveal>
+      <p class="eyebrow">Follow the climb</p>
+      <h2 id="follow-title">The tower isn’t open yet. Be there when it is.</h2>
+      <p>No store page or Discord yet — when they exist, they’ll be right here. Until then, this is where HALDEN lives:</p>
+    </div>
+    <ul class="follow__cards stagger" data-reveal>
+      <li class="plate fcard">
+        <div class="fcard__head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-youtube"></use></svg><h3>YouTube</h3></div>
+        <p>Trailers and updates.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary btn--sm" href="https://www.youtube.com/@EmetStudiosOfficial" rel="noopener">Open the channel ↗</a>
+        </div>
+      </li>
+      <li class="plate fcard">
+        <div class="fcard__head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-rss"></use></svg><h3>Devlog</h3></div>
+        <p>Field notes from the build. Follow with any RSS reader — no account, no tracking.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary btn--sm" href="/devlog/">Read the devlog</a>
+          <a class="btn btn--ghost btn--sm" href="/devlog/feed.xml">RSS feed</a>
+        </div>
+      </li>
+      <li class="plate fcard">
+        <div class="fcard__head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><h3>Email</h3></div>
+        <p>Questions and press. We read every message.</p>
+        <div class="btn-row">
+          <a class="btn btn--ghost btn--sm fcard__mail" href="mailto:contact@playhalden.com">contact@playhalden.com</a>
+        </div>
+      </li>
+    </ul>
+    <p class="promise"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>No cookies. No trackers. No banner. This site stores nothing on your device.</p>
+  </div>
+</section>
+
 </main>
-<footer><div><span>&copy; 2026 HALDEN</span><span><a href="privacy.html">Privacy Policy</a></span></div></footer>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">
+          <picture><source type="image/avif" srcset="/assets/img/halden-crest-128.avif 1x, /assets/img/halden-crest-256.avif 2x"><img src="/assets/img/halden-crest-128.webp" srcset="/assets/img/halden-crest-256.webp 2x" width="64" height="64" alt="" loading="lazy" decoding="async"></picture>
+          <div>
+            <p class="footer__word">HALDEN</p>
+            <p class="footer__tag">The tower is alive.</p>
+            <p class="footer__status">In development for Windows PC</p>
+          </div>
+        </div>
+        <ul class="socials" aria-label="HALDEN elsewhere">
+          <li><a href="https://www.youtube.com/@EmetStudiosOfficial" rel="noopener" aria-label="HALDEN on YouTube"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-youtube"></use></svg></a></li>
+        </ul>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/devlog/">Devlog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/press/">Press kit</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/devlog/feed.xml">RSS feed</a></li>
+          <li><a href="mailto:contact@playhalden.com">contact@playhalden.com</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__legal">
+      <p>© 2026 HALDEN. All rights reserved.</p>
+      <p>Unreal Engine and Epic Online Services are trademarks or registered trademarks of Epic Games, Inc. in the United States of America and elsewhere.</p>
+      <p>Image captions mark what is in-engine and what is illustration.</p>
+      <p>No cookies. No trackers. No banner.</p>
+    </div>
+  </div>
+</footer>
+<div class="dock" aria-label="Quick actions" role="region">
+  <a class="btn btn--primary" href="#follow">Follow the climb</a>
+  <a class="btn btn--ghost" href="https://www.youtube.com/watch?v=CzQmfyqux14" data-play="trailer"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg> Trailer</a>
+</div>
 </body>
 </html>
