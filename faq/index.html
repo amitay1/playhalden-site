@@ -29,11 +29,10 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://playhalden.com/faq/","url":"https://playhalden.com/faq/","name":"HALDEN FAQ | Release, platforms, co-op and the trailer","description":"Straight answers about HALDEN: release date, platforms, price, online co-op, the reveal trailer, and exactly how this website treats your privacy.","inLanguage":"en","isPartOf":{"@id":"https://playhalden.com/#website"},"about":{"@id":"https://playhalden.com/#game"}}]}</script>
 <link rel="preload" href="/assets/fonts/cinzel-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/spectral-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.99b9d45f.css">
-<script type="module" src="/assets/js/site.a7c09919.js"></script>
+<link rel="stylesheet" href="/assets/css/site.3502e8c6.css">
+<script type="module" src="/assets/js/site.a671a688.js"></script>
 <link rel="alternate" type="application/atom+xml" title="HALDEN devlog" href="/devlog/feed.xml">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 </head>
@@ -75,8 +74,9 @@
 
 <header class="site-header">
   <div class="site-header__inner wrap">
-    <a class="brand" href="/"><img src="/logo.png" width="32" height="32" alt=""><span class="brand__word">HALDEN</span><span class="visually-hidden">, home</span></a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg><span>Menu</span></button>
+    <a class="brand" href="/"><picture><source type="image/avif" srcset="/assets/img/halden-logo-32.avif 1x, /assets/img/halden-logo-64.avif 2x"><source type="image/webp" srcset="/assets/img/halden-logo-32.webp 1x, /assets/img/halden-logo-64.webp 2x"><img src="/logo.png" width="32" height="32" alt=""></picture><span class="brand__word">HALDEN</span><span class="visually-hidden">, home</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel"><span class="menu-btn__open"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>Menu</span><span class="menu-btn__close"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg>Close</span></button>
+    <div class="nav-scrim" aria-hidden="true"></div>
     <div class="nav-panel" id="nav-panel">
       <nav class="nav" aria-label="Primary">
         <ul>
@@ -100,100 +100,106 @@
     <p class="eyebrow">Straight answers</p>
     <h1>Questions</h1>
     <p class="sub">Last updated October 25, 2026</p>
-    <nav aria-label="FAQ sections">
-      <ul class="jump">
-        <li><a href="#the-game">The game</a></li>
-        <li><a href="#release">Release</a></li>
-        <li><a href="#community">Community and contact</a></li>
-        <li><a href="#this-website">This website</a></li>
-      </ul>
-    </nav>
   </header>
-  <section class="faq-sec" id="the-game" aria-labelledby="the-game-title">
-    <h2 id="the-game-title">The game</h2>
-    <div class="qa">
-      <div class="plate qa__item">
-        <h3 id="what-is-halden">What is HALDEN?</h3>
-        <p>A first-person roguelite shooter. You climb a living tower room by room on a branching route, pick up weapons and relics as you go, and fight whatever the tower grows to stop you. When a run ends, you start again from the bottom.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="is-the-trailer-gameplay">Is the trailer gameplay?</h3>
-        <p>No. The reveal trailer is a cinematic made with AI-assisted visuals. It sets the mood. For what the game looks like today, see the <a href="/#gallery">in-engine captures on the home page</a> — they’re labelled. Gameplay footage will follow.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="is-the-key-art-the-game">Is the key art what the game looks like?</h3>
-        <p>No. The key art is AI-assisted illustration made to set the tone. The game itself is stylized and cel-shaded; images captioned ‘in-engine’ show the development build as it really is.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="co-op">Can I play with friends?</h3>
-        <p>That’s the plan. Online co-op is designed in from the start and is in development and testing now, planned for up to four players. Solo runs already play from start to finish in the development build. We’ll call co-op ready when it works between real PCs over the internet.</p>
-      </div>
+  <div class="page-grid page-grid--aside faq">
+    <aside class="faq__toc">
+      <nav class="plate toc" aria-label="FAQ sections">
+        <p class="eyebrow">Jump to</p>
+        <ul class="jump">
+          <li><a href="#the-game">The game</a></li>
+          <li><a href="#release">Release</a></li>
+          <li><a href="#community">Community and contact</a></li>
+          <li><a href="#this-website">This website</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="press__main">
+      <section class="faq-sec" id="the-game" aria-labelledby="the-game-title">
+        <h2 id="the-game-title">The game</h2>
+        <div class="qa">
+          <div class="plate qa__item">
+            <h3 id="what-is-halden">What is HALDEN?</h3>
+            <p>A first-person roguelite shooter. You climb a living tower room by room on a branching route, pick up weapons and relics as you go, and fight whatever the tower grows to stop you. When a run ends, you start again from the bottom.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="is-the-trailer-gameplay">Is the trailer gameplay?</h3>
+            <p>No. The reveal trailer is a cinematic made with AI-assisted visuals. It sets the mood. For what the game looks like today, see the <a href="/#gallery">in-engine captures on the home page</a> — they’re labelled. Gameplay footage will follow.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="is-the-key-art-the-game">Is the key art what the game looks like?</h3>
+            <p>No. The key art is AI-assisted illustration made to set the tone. The game itself is stylized and cel-shaded; images captioned ‘in-engine’ show the development build as it really is.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="co-op">Can I play with friends?</h3>
+            <p>That’s the plan. Online co-op is designed in from the start and is in development and testing now, planned for up to four players. Solo runs already play from start to finish in the development build. We’ll call co-op ready when it works between real PCs over the internet.</p>
+          </div>
+        </div>
+      </section>
+      <section class="faq-sec" id="release" aria-labelledby="release-title">
+        <h2 id="release-title">Release</h2>
+        <div class="qa">
+          <div class="plate qa__item">
+            <h3 id="release-date">When does HALDEN come out?</h3>
+            <p>There’s no release date yet. HALDEN is in active development, and we won’t announce a date until we can keep it.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="price">How much will it cost?</h3>
+            <p>No price is set yet.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="platforms">Which platforms?</h3>
+            <p>Windows PC. No other platforms are announced.</p>
+          </div>
+          <div class="plate qa__item" data-lint-allow="wishlist">
+            <h3 id="wishlist">Can I wishlist it?</h3>
+            <p>Not yet — there’s no store page yet. When there is, a Wishlist button will appear at the top of this site.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="demo-playtest">Is there a demo or a playtest?</h3>
+            <p>Not yet.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="languages">What languages?</h3>
+            <p>English. No other languages are announced.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="system-requirements">What are the system requirements?</h3>
+            <p>They haven’t been measured yet. We’ll publish them when they are.</p>
+          </div>
+        </div>
+      </section>
+      <section class="faq-sec" id="community" aria-labelledby="community-title">
+        <h2 id="community-title">Community and contact</h2>
+        <div class="qa">
+          <div class="plate qa__item">
+            <h3 id="discord">Is there a Discord?</h3>
+            <p>Not yet. For now, follow the <a href="https://www.youtube.com/@EmetStudiosOfficial">YouTube channel</a> or the devlog’s <a href="/devlog/feed.xml">RSS feed</a>.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="who-makes-halden">Who makes HALDEN?</h3>
+            <p>HALDEN is made independently. For studio details and interviews, write to <a href="mailto:contact@playhalden.com">contact@playhalden.com</a>.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="press-and-creators">I write about games or make videos. Where do I start?</h3>
+            <p>The <a href="/press/">press kit</a> has the fact sheet, images, logos and trailer. Questions and interview requests: <a href="mailto:contact@playhalden.com">contact@playhalden.com</a>.</p>
+          </div>
+          <div class="plate qa__item">
+            <h3 id="contact">How do I get in touch?</h3>
+            <p>Email <a href="mailto:contact@playhalden.com">contact@playhalden.com</a>. We read every message.</p>
+          </div>
+        </div>
+      </section>
+      <section class="faq-sec" id="this-website" aria-labelledby="this-website-title">
+        <h2 id="this-website-title">This website</h2>
+        <div class="qa">
+          <div class="plate qa__item">
+            <h3 id="tracking">Does this site track me?</h3>
+            <p>No. No cookies, no analytics, no ads, and nothing stored on your device. The trailer only connects to YouTube when you press play. Details in the <a href="/privacy.html#website">privacy policy</a>.</p>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
-  <section class="faq-sec" id="release" aria-labelledby="release-title">
-    <h2 id="release-title">Release</h2>
-    <div class="qa">
-      <div class="plate qa__item">
-        <h3 id="release-date">When does HALDEN come out?</h3>
-        <p>There’s no release date yet. HALDEN is in active development, and we won’t announce a date until we can keep it.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="price">How much will it cost?</h3>
-        <p>No price is set yet.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="platforms">Which platforms?</h3>
-        <p>Windows PC. No other platforms are announced.</p>
-      </div>
-      <div class="plate qa__item" data-lint-allow="wishlist">
-        <h3 id="wishlist">Can I wishlist it?</h3>
-        <p>Not yet — there’s no store page yet. When there is, a Wishlist button will appear at the top of this site.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="demo-playtest">Is there a demo or a playtest?</h3>
-        <p>Not yet.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="languages">What languages?</h3>
-        <p>English. No other languages are announced.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="system-requirements">What are the system requirements?</h3>
-        <p>They haven’t been measured yet. We’ll publish them when they are.</p>
-      </div>
-    </div>
-  </section>
-  <section class="faq-sec" id="community" aria-labelledby="community-title">
-    <h2 id="community-title">Community and contact</h2>
-    <div class="qa">
-      <div class="plate qa__item">
-        <h3 id="discord">Is there a Discord?</h3>
-        <p>Not yet. For now, follow the <a href="https://www.youtube.com/@EmetStudiosOfficial">YouTube channel</a> or the devlog’s <a href="/devlog/feed.xml">RSS feed</a>.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="who-makes-halden">Who makes HALDEN?</h3>
-        <p>HALDEN is made independently. Studio details are in the <a href="/press/">press kit</a>.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="press-and-creators">I write about games or make videos. Where do I start?</h3>
-        <p>The <a href="/press/">press kit</a> has the fact sheet, images, logos and trailer. Questions and interview requests: <a href="mailto:contact@playhalden.com">contact@playhalden.com</a>.</p>
-      </div>
-      <div class="plate qa__item">
-        <h3 id="contact">How do I get in touch?</h3>
-        <p>Email <a href="mailto:contact@playhalden.com">contact@playhalden.com</a>. We read every message.</p>
-      </div>
-    </div>
-  </section>
-  <section class="faq-sec" id="this-website" aria-labelledby="this-website-title">
-    <h2 id="this-website-title">This website</h2>
-    <div class="qa">
-      <div class="plate qa__item">
-        <h3 id="tracking">Does this site track me?</h3>
-        <p>No. No cookies, no analytics, no ads, and nothing stored on your device. The trailer only connects to YouTube when you press play. Details in the <a href="/privacy.html#website">privacy policy</a>.</p>
-      </div>
-    </div>
-  </section>
-  <div class="mt-2"></div>
+  </div>
 </div>
 
 </main>

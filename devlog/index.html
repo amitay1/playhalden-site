@@ -8,12 +8,12 @@
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#120d0a">
 <title>HALDEN devlog | Field notes from the climb</title>
-<meta name="description" content="Field notes from HALDEN&#39;s development: what&#39;s in the build, what changed, what&#39;s next. Follow the climb with any RSS reader, no account needed.">
+<meta name="description" content="Field notes from HALDEN’s development: what’s in the build, what changed, what’s next. Follow the climb with any RSS reader, no account needed.">
 <link rel="canonical" href="https://playhalden.com/devlog/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HALDEN">
 <meta property="og:title" content="HALDEN devlog | Field notes from the climb">
-<meta property="og:description" content="Field notes from HALDEN&#39;s development: what&#39;s in the build, what changed, what&#39;s next. Follow the climb with any RSS reader, no account needed.">
+<meta property="og:description" content="Field notes from HALDEN’s development: what’s in the build, what changed, what’s next. Follow the climb with any RSS reader, no account needed.">
 <meta property="og:url" content="https://playhalden.com/devlog/">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://playhalden.com/assets/img/og/halden-og-1200x630.jpg">
@@ -23,17 +23,16 @@
 <meta property="og:image:alt" content="HALDEN key art: two climbers before the golden living tower, with the HALDEN wordmark. AI-assisted illustration.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="HALDEN devlog | Field notes from the climb">
-<meta name="twitter:description" content="Field notes from HALDEN&#39;s development: what&#39;s in the build, what changed, what&#39;s next. Follow the climb with any RSS reader, no account needed.">
+<meta name="twitter:description" content="Field notes from HALDEN’s development: what’s in the build, what changed, what’s next. Follow the climb with any RSS reader, no account needed.">
 <meta name="twitter:image" content="https://playhalden.com/assets/img/og/halden-og-1200x630.jpg">
 <meta name="twitter:image:alt" content="HALDEN key art: two climbers before the golden living tower, with the HALDEN wordmark. AI-assisted illustration.">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://playhalden.com/devlog/","url":"https://playhalden.com/devlog/","name":"HALDEN devlog | Field notes from the climb","description":"Field notes from HALDEN's development: what's in the build, what changed, what's next. Follow the climb with any RSS reader, no account needed.","inLanguage":"en","isPartOf":{"@id":"https://playhalden.com/#website"},"about":{"@id":"https://playhalden.com/#game"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://playhalden.com/devlog/","url":"https://playhalden.com/devlog/","name":"HALDEN devlog | Field notes from the climb","description":"Field notes from HALDEN’s development: what’s in the build, what changed, what’s next. Follow the climb with any RSS reader, no account needed.","inLanguage":"en","isPartOf":{"@id":"https://playhalden.com/#website"},"about":{"@id":"https://playhalden.com/#game"}}]}</script>
 <link rel="preload" href="/assets/fonts/cinzel-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/spectral-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.99b9d45f.css">
-<script type="module" src="/assets/js/site.a7c09919.js"></script>
+<link rel="stylesheet" href="/assets/css/site.3502e8c6.css">
+<script type="module" src="/assets/js/site.a671a688.js"></script>
 <link rel="alternate" type="application/atom+xml" title="HALDEN devlog" href="/devlog/feed.xml">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 </head>
@@ -75,8 +74,9 @@
 
 <header class="site-header">
   <div class="site-header__inner wrap">
-    <a class="brand" href="/"><img src="/logo.png" width="32" height="32" alt=""><span class="brand__word">HALDEN</span><span class="visually-hidden">, home</span></a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg><span>Menu</span></button>
+    <a class="brand" href="/"><picture><source type="image/avif" srcset="/assets/img/halden-logo-32.avif 1x, /assets/img/halden-logo-64.avif 2x"><source type="image/webp" srcset="/assets/img/halden-logo-32.webp 1x, /assets/img/halden-logo-64.webp 2x"><img src="/logo.png" width="32" height="32" alt=""></picture><span class="brand__word">HALDEN</span><span class="visually-hidden">, home</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel"><span class="menu-btn__open"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>Menu</span><span class="menu-btn__close"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg>Close</span></button>
+    <div class="nav-scrim" aria-hidden="true"></div>
     <div class="nav-panel" id="nav-panel">
       <nav class="nav" aria-label="Primary">
         <ul>
@@ -103,11 +103,16 @@
   </header>
   <ul class="posts">
     <li>
-      <article class="plate post-card" aria-labelledby="post-field-notes-01">
+      <article class="plate post-card post-card--media" aria-labelledby="post-field-notes-01">
+        <figure class="fig"><picture>
+<source type="image/avif" srcset="/assets/img/halden-stratum-3-768.avif 768w, /assets/img/halden-stratum-3-1280.avif 1280w, /assets/img/halden-stratum-3-1920.avif 1920w" sizes="(min-width: 48rem) 288px, calc(100vw - 4rem)">
+<source type="image/webp" srcset="/assets/img/halden-stratum-3-768.webp 768w, /assets/img/halden-stratum-3-1280.webp 1280w, /assets/img/halden-stratum-3-1920.webp 1920w" sizes="(min-width: 48rem) 288px, calc(100vw - 4rem)">
+<img src="/assets/img/halden-stratum-3-1280.jpg" srcset="/assets/img/halden-stratum-3-768.jpg 768w, /assets/img/halden-stratum-3-1280.jpg 1280w, /assets/img/halden-stratum-3-1920.jpg 1920w" sizes="(min-width: 48rem) 288px, calc(100vw - 4rem)" width="1920" height="1080" alt="In-engine: a long white-and-gold colonnade under a purple storm sky, leading to a temple gate." loading="lazy" decoding="async">
+</picture><figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></figcaption></figure>
         <time datetime="2026-10-25">October 25, 2026</time>
         <h2 id="post-field-notes-01"><a href="/devlog/field-notes-01/">Field notes 01: Where the climb stands</a></h2>
         <p>Where HALDEN stands in October 2026: a full solo run through all three strata, four climbers, 30+ weapons, Kindred companions, and co-op in testing.</p>
-        <a class="more" href="/devlog/field-notes-01/" aria-label="Read Field notes 01: Where the climb stands">Read →</a>
+        <a class="more" href="/devlog/field-notes-01/" aria-label="Read Field notes 01: Where the climb stands">Read <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-right"></use></svg></a>
       </article>
     </li>
   </ul>

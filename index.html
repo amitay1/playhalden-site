@@ -31,11 +31,10 @@
 <link rel="preload" href="/assets/fonts/spectral-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" media="(min-width: 64rem)" imagesrcset="/assets/img/halden-hero-d-768.avif 768w, /assets/img/halden-hero-d-1024.avif 1024w, /assets/img/halden-hero-d-1440.avif 1440w, /assets/img/halden-hero-d-1672.avif 1672w" imagesizes="100vw" fetchpriority="high">
 <link rel="preload" as="image" type="image/avif" media="(max-width: 63.99rem)" imagesrcset="/assets/img/halden-hero-m-480.avif 480w, /assets/img/halden-hero-m-768.avif 768w, /assets/img/halden-hero-m-941.avif 941w" imagesizes="100vw" fetchpriority="high">
-<link rel="stylesheet" href="/assets/css/site.99b9d45f.css">
-<script type="module" src="/assets/js/site.a7c09919.js"></script>
+<link rel="stylesheet" href="/assets/css/site.3502e8c6.css">
+<script type="module" src="/assets/js/site.a671a688.js"></script>
 <link rel="alternate" type="application/atom+xml" title="HALDEN devlog" href="/devlog/feed.xml">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-<link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 </head>
@@ -78,8 +77,9 @@
 <div class="hero-sentinel" aria-hidden="true"></div>
 <header class="site-header">
   <div class="site-header__inner wrap">
-    <a class="brand" href="/" aria-current="page"><img src="/logo.png" width="32" height="32" alt=""><span class="brand__word">HALDEN</span><span class="visually-hidden">, home</span></a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg><span>Menu</span></button>
+    <a class="brand" href="/" aria-current="page"><picture><source type="image/avif" srcset="/assets/img/halden-logo-32.avif 1x, /assets/img/halden-logo-64.avif 2x"><source type="image/webp" srcset="/assets/img/halden-logo-32.webp 1x, /assets/img/halden-logo-64.webp 2x"><img src="/logo.png" width="32" height="32" alt=""></picture><span class="brand__word">HALDEN</span><span class="visually-hidden">, home</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel"><span class="menu-btn__open"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>Menu</span><span class="menu-btn__close"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg>Close</span></button>
+    <div class="nav-scrim" aria-hidden="true"></div>
     <div class="nav-panel" id="nav-panel">
       <nav class="nav" aria-label="Primary">
         <ul>
@@ -166,7 +166,7 @@
 <source type="image/webp" srcset="/assets/img/halden-trailer-poster-768.webp 768w, /assets/img/halden-trailer-poster-1024.webp 1024w, /assets/img/halden-trailer-poster-1440.webp 1440w" sizes="(min-width: 76rem) 1216px, calc(100vw - 2rem)">
 <img src="/assets/img/halden-trailer-poster-1024.jpg" srcset="/assets/img/halden-trailer-poster-768.jpg 768w, /assets/img/halden-trailer-poster-1024.jpg 1024w, /assets/img/halden-trailer-poster-1440.jpg 1440w" sizes="(min-width: 76rem) 1216px, calc(100vw - 2rem)" width="1440" height="810" alt="HALDEN reveal trailer: the two climbers from the key art beneath the gold HALDEN title." loading="lazy" decoding="async">
 </picture>
-        <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Cinematic · AI-assisted visuals · not gameplay</span></span>
+        <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-compass"></use></svg><span>Cinematic<span class="chip__opt"> · AI-assisted visuals</span> · not gameplay</span></span>
         <span class="trailer__play" aria-hidden="true"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg></span>
         <span class="trailer__label">Play the reveal trailer <span>· 1:11</span></span>
       </a>
@@ -194,12 +194,12 @@
       <div class="plate rule mt-2">
         <p class="eyebrow">Tower rule</p>
         <h3>It keeps count.</h3>
-        <p>Skip a fight and the tower doesn’t forget. What you dodged can come looking for you later in the climb.</p>
+        <p>Skip an elite and the tower doesn’t forget. What you dodged can come looking for you later in the climb.</p>
       </div>
     </div>
     <div class="climb__route" data-reveal>
       <h3>Pick your path</h3>
-      <svg class="route__map" viewBox="0 0 600 410" aria-hidden="true" focusable="false">
+      <svg class="route__map" viewBox="0 -24 600 434" aria-hidden="true" focusable="false">
   <defs>
     <radialGradient id="crownGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd27a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
   </defs>
@@ -247,7 +247,7 @@
         <li class="tile tile--gold"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-event"></use></svg><h4>Event</h4><p>A stranger, a bargain, a door. Choose.</p></li>
         <li class="tile tile--ally"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-coin"></use></svg><h4>The Craw</h4><p>A market inside the tower. Spend your gold.</p></li>
         <li class="tile tile--ally"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-flame"></use></svg><h4>Rest</h4><p>A campfire hall. Catch your breath.</p></li>
-        <li class="tile tile--foe"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-crown"></use></svg><h4>Boss</h4><p>The stratum&#39;s last word.</p></li>
+        <li class="tile tile--foe"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-crown"></use></svg><h4>Boss</h4><p>The stratum’s last word.</p></li>
       </ul>
     </div>
   </div>
@@ -262,7 +262,7 @@
 <source type="image/webp" srcset="/assets/img/halden-stratum-1-768.webp 768w, /assets/img/halden-stratum-1-1280.webp 1280w, /assets/img/halden-stratum-1-1920.webp 1920w" sizes="(min-width: 64rem) 60vw, 100vw">
 <img src="/assets/img/halden-stratum-1-1280.jpg" srcset="/assets/img/halden-stratum-1-768.jpg 768w, /assets/img/halden-stratum-1-1280.jpg 1280w, /assets/img/halden-stratum-1-1920.jpg 1920w" sizes="(min-width: 64rem) 60vw, 100vw" width="1920" height="1080" alt="In-engine: overgrown white temple ruins behind hanging willow roots and a green pool." loading="lazy" decoding="async">
 </picture>
-        <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · development build · Sept 2026</span></figcaption>
+        <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine<span class="chip__opt"> · development build</span> · Sept 2026</span></figcaption>
       </figure>
       <div class="stratum__text" data-reveal>
         <span class="stratum__num" aria-hidden="true">I</span>
@@ -282,7 +282,7 @@
 <source type="image/webp" srcset="/assets/img/halden-stratum-2-768.webp 768w, /assets/img/halden-stratum-2-1280.webp 1280w, /assets/img/halden-stratum-2-1920.webp 1920w" sizes="(min-width: 64rem) 60vw, 100vw">
 <img src="/assets/img/halden-stratum-2-1280.jpg" srcset="/assets/img/halden-stratum-2-768.jpg 768w, /assets/img/halden-stratum-2-1280.jpg 1280w, /assets/img/halden-stratum-2-1920.jpg 1920w" sizes="(min-width: 64rem) 60vw, 100vw" width="1920" height="1080" alt="In-engine: a stone gatehouse with a lowered portcullis, half-hidden by twisted roots and lit by shafts of sun." loading="lazy" decoding="async">
 </picture>
-        <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · development build · Sept 2026</span></figcaption>
+        <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine<span class="chip__opt"> · development build</span> · Sept 2026</span></figcaption>
       </figure>
       <div class="stratum__text" data-reveal>
         <span class="stratum__num" aria-hidden="true">II</span>
@@ -302,7 +302,7 @@
 <source type="image/webp" srcset="/assets/img/halden-stratum-3-768.webp 768w, /assets/img/halden-stratum-3-1280.webp 1280w, /assets/img/halden-stratum-3-1920.webp 1920w" sizes="(min-width: 64rem) 60vw, 100vw">
 <img src="/assets/img/halden-stratum-3-1280.jpg" srcset="/assets/img/halden-stratum-3-768.jpg 768w, /assets/img/halden-stratum-3-1280.jpg 1280w, /assets/img/halden-stratum-3-1920.jpg 1920w" sizes="(min-width: 64rem) 60vw, 100vw" width="1920" height="1080" alt="In-engine: a long white-and-gold colonnade under a purple storm sky, leading to a temple gate." loading="lazy" decoding="async">
 </picture>
-        <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · development build · Sept 2026</span></figcaption>
+        <figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine<span class="chip__opt"> · development build</span> · Sept 2026</span></figcaption>
       </figure>
       <div class="stratum__text" data-reveal>
         <span class="stratum__num" aria-hidden="true">III</span>
@@ -328,11 +328,11 @@
           <figure class="hero-card__media">
             <picture>
 <source type="image/avif" srcset="/assets/img/halden-hero-bastion-388.avif 388w, /assets/img/halden-hero-bastion-582.avif 582w" sizes="(min-width: 64rem) 220px, 40vw">
-<img src="/assets/img/halden-hero-bastion-582.webp" srcset="/assets/img/halden-hero-bastion-388.webp 388w, /assets/img/halden-hero-bastion-582.webp 582w" sizes="(min-width: 64rem) 220px, 40vw" width="582" height="900" alt="Bastion, a skeletal wizard in a blue and gold robe, a green spark in one hand." loading="lazy" decoding="async">
+<img src="/assets/img/halden-hero-bastion-582.webp" srcset="/assets/img/halden-hero-bastion-388.webp 388w, /assets/img/halden-hero-bastion-582.webp 582w" sizes="(min-width: 64rem) 220px, 40vw" width="582" height="900" alt="Bastion, a skeletal wizard in a blue and gold robe, a cyan-ringed amber sigil above one hand." loading="lazy" decoding="async">
 </picture>
           </figure>
           <div class="hero-card__body">
-            <p class="hero-card__title">The Bulwark</p>
+            <p class="hero-card__title">Hold the line</p>
             <h3 id="hero-bastion">Bastion <span class="tag tag--ally">Tank</span></h3>
             <p>Hold a lane, brace against frontal attacks, then spend Pressure to strike back.</p>
             <p class="res"><span class="tag tag--gold">Resource: Pressure</span></p>
@@ -348,7 +348,7 @@
 </picture>
           </figure>
           <div class="hero-card__body">
-            <p class="hero-card__title">The Pyro</p>
+            <p class="hero-card__title">Build momentum</p>
             <h3 id="hero-cinder">Cinder <span class="tag tag--ally">Assault</span></h3>
             <p>Build Heat on burning enemies. Stay hot for faster fire, or vent it to break through.</p>
             <p class="res"><span class="tag tag--gold">Resource: Heat</span></p>
@@ -364,8 +364,8 @@
 </picture>
           </figure>
           <div class="hero-card__body">
-            <p class="hero-card__title">The Conduit</p>
-            <h3 id="hero-lysa">Lysa <span class="tag tag--ally">Healer</span></h3>
+            <p class="hero-card__title">Tether the squad</p>
+            <h3 id="hero-lysa">Lysa <span class="tag tag--ally">Conduit</span></h3>
             <p>Mark an enemy, earn Grace by attacking, then choose who receives your healing and wards.</p>
             <p class="res"><span class="tag tag--gold">Resource: Grace</span></p>
           </div>
@@ -380,8 +380,8 @@
 </picture>
           </figure>
           <div class="hero-card__body">
-            <p class="hero-card__title">The Alchemist</p>
-            <h3 id="hero-vesper">Vesper <span class="tag tag--ally">Combo</span></h3>
+            <p class="hero-card__title">Prime the field</p>
+            <h3 id="hero-vesper">Vesper <span class="tag tag--ally">Catalyst</span></h3>
             <p>Prime targets, build Preparation with weapon hits, then spend Reagent to detonate your setup.</p>
             <p class="res"><span class="tag tag--gold">Resource: Reagent</span></p>
           </div>
@@ -448,7 +448,7 @@
         <div class="weapon__body">
           <h3>Bishamon</h3>
           <span class="tag tag--gold">War Hammer</span>
-          <p>A war-god&#39;s hammer. Raise it, break the floor, and hold the quake around you.</p>
+          <p>A war-god’s hammer. Raise it, break the floor, and hold the quake around you.</p>
         </div>
       </li>
       <li class="weapon">
@@ -504,7 +504,7 @@
         <div class="weapon__body">
           <h3>Tsukuyomi no Te</h3>
           <span class="tag tag--gold">Void Cannon</span>
-          <p>The moon&#39;s own hand. Slow voids that gather the crowd, then collapse.</p>
+          <p>The moon’s own hand. Slow voids that gather the crowd, then collapse.</p>
         </div>
       </li>
       <li class="weapon">
@@ -661,12 +661,12 @@
 <source type="image/avif" srcset="/assets/img/halden-boss-768.avif 768w, /assets/img/halden-boss-1280.avif 1280w, /assets/img/halden-boss-1920.avif 1920w" sizes="(min-width: 64rem) 50vw, 100vw">
 <source type="image/webp" srcset="/assets/img/halden-boss-768.webp 768w, /assets/img/halden-boss-1280.webp 1280w, /assets/img/halden-boss-1920.webp 1920w" sizes="(min-width: 64rem) 50vw, 100vw">
 <img src="/assets/img/halden-boss-1280.jpg" srcset="/assets/img/halden-boss-768.jpg 768w, /assets/img/halden-boss-1280.jpg 1280w, /assets/img/halden-boss-1920.jpg 1920w" sizes="(min-width: 64rem) 50vw, 100vw" width="1920" height="1080" alt="Illustration: the Spider Queen, a towering spider-bodied matriarch, rises in a crimson brood cavern." loading="lazy" decoding="async">
-</picture><figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span>Illustration · AI-assisted</span></figcaption></figure>
+</picture><figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span><span class="chip__opt">Illustration · </span>AI-assisted</span></figcaption></figure>
       <figure class="fig"><picture>
 <source type="image/avif" srcset="/assets/img/halden-golem-768.avif 768w, /assets/img/halden-golem-1280.avif 1280w" sizes="(min-width: 64rem) 25vw, 100vw">
 <source type="image/webp" srcset="/assets/img/halden-golem-768.webp 768w, /assets/img/halden-golem-1280.webp 1280w" sizes="(min-width: 64rem) 25vw, 100vw">
 <img src="/assets/img/halden-golem-1280.jpg" srcset="/assets/img/halden-golem-768.jpg 768w, /assets/img/halden-golem-1280.jpg 1280w" sizes="(min-width: 64rem) 25vw, 100vw" width="1280" height="720" alt="Illustration: a bone golem in horned skull armour stands in overgrown temple ruins." loading="lazy" decoding="async">
-</picture><figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span>Illustration · AI-assisted</span></figcaption></figure>
+</picture><figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span><span class="chip__opt">Illustration · </span>AI-assisted</span></figcaption></figure>
     </div>
     <div class="ab-row">
       <div data-reveal>
@@ -691,7 +691,7 @@
     </div>
   </div>
 </section><section id="coop" class="section" aria-labelledby="coop-title" data-theme-section="ally">
-  <div class="wrap split split--5-7">
+  <div class="wrap split">
     <div data-reveal>
       <div class="section__head">
         <p class="eyebrow">Co-op</p>
@@ -704,7 +704,7 @@
 <source type="image/avif" srcset="/assets/img/halden-coop-768.avif 768w, /assets/img/halden-coop-1280.avif 1280w, /assets/img/halden-coop-1920.avif 1920w" sizes="(min-width: 64rem) 55vw, 100vw">
 <source type="image/webp" srcset="/assets/img/halden-coop-768.webp 768w, /assets/img/halden-coop-1280.webp 1280w, /assets/img/halden-coop-1920.webp 1920w" sizes="(min-width: 64rem) 55vw, 100vw">
 <img src="/assets/img/halden-coop-1280.jpg" srcset="/assets/img/halden-coop-768.jpg 768w, /assets/img/halden-coop-1280.jpg 1280w, /assets/img/halden-coop-1920.jpg 1920w" sizes="(min-width: 64rem) 55vw, 100vw" width="1920" height="1080" alt="Illustration: the four climbers fight side by side on a white-and-gold stairway." loading="lazy" decoding="async">
-</picture><figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span>Illustration · AI-assisted</span></figcaption></figure>
+</picture><figcaption class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-brush"></use></svg><span><span class="chip__opt">Illustration · </span>AI-assisted</span></figcaption></figure>
   </div>
 </section><section id="gallery" class="section" aria-labelledby="gallery-title" data-theme-section="ember">
   <div class="wrap">
@@ -716,91 +716,91 @@
     <ul class="gallery stagger" data-reveal>
       <li class="gallery__g1">
         <figure class="fig-plain">
-          <a href="/assets/img/halden-g1-full.jpg" data-lb data-avif="/assets/img/halden-g1-full.avif" data-w="2359" data-h="1328" data-chip="In-engine · Sept 2026" data-alt="First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path.">
+          <a class="g-link" href="/assets/img/halden-g2-full.jpg" data-lb data-avif="/assets/img/halden-g2-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="Golden stairs and arched halls beside a waterfall in a flowering valley.">
             <picture>
-<source type="image/avif" srcset="/assets/img/halden-g1-768.avif 768w, /assets/img/halden-g1-1024.avif 1024w" sizes="(min-width: 64rem) 50vw, 100vw">
-<source type="image/webp" srcset="/assets/img/halden-g1-768.webp 768w, /assets/img/halden-g1-1024.webp 1024w" sizes="(min-width: 64rem) 50vw, 100vw">
-<img src="/assets/img/halden-g1-1024.jpg" srcset="/assets/img/halden-g1-768.jpg 768w, /assets/img/halden-g1-1024.jpg 1024w" sizes="(min-width: 64rem) 50vw, 100vw" width="1024" height="576" alt="First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path." loading="lazy" decoding="async">
+<source type="image/avif" srcset="/assets/img/halden-g2-480.avif 480w, /assets/img/halden-g2-768.avif 768w, /assets/img/halden-g2-1024.avif 1024w" sizes="(min-width: 64rem) 50vw, 100vw">
+<source type="image/webp" srcset="/assets/img/halden-g2-480.webp 480w, /assets/img/halden-g2-768.webp 768w, /assets/img/halden-g2-1024.webp 1024w" sizes="(min-width: 64rem) 50vw, 100vw">
+<img src="/assets/img/halden-g2-768.jpg" srcset="/assets/img/halden-g2-480.jpg 480w, /assets/img/halden-g2-768.jpg 768w, /assets/img/halden-g2-1024.jpg 1024w" sizes="(min-width: 64rem) 50vw, 100vw" width="1024" height="576" alt="Golden stairs and arched halls beside a waterfall in a flowering valley." loading="lazy" decoding="async">
 </picture>
-            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine<span class="chip__opt"> · Sept 2026</span></span></span>
             <span class="visually-hidden">Open full size</span>
           </a>
         </figure>
       </li>
       <li>
         <figure class="fig-plain">
-          <a href="/assets/img/halden-g2-full.jpg" data-lb data-avif="/assets/img/halden-g2-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="Golden stairs and arched halls beside a waterfall in a flowering valley.">
-            <picture>
-<source type="image/avif" srcset="/assets/img/halden-g2-480.avif 480w, /assets/img/halden-g2-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
-<source type="image/webp" srcset="/assets/img/halden-g2-480.webp 480w, /assets/img/halden-g2-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
-<img src="/assets/img/halden-g2-768.jpg" srcset="/assets/img/halden-g2-480.jpg 480w, /assets/img/halden-g2-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="Golden stairs and arched halls beside a waterfall in a flowering valley." loading="lazy" decoding="async">
-</picture>
-            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
-            <span class="visually-hidden">Open full size</span>
-          </a>
-        </figure>
-      </li>
-      <li>
-        <figure class="fig-plain">
-          <a href="/assets/img/halden-g3-full.jpg" data-lb data-avif="/assets/img/halden-g3-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A grassy path through bamboo and blue flowers toward a red torii gate under a dusk sky.">
+          <a class="g-link" href="/assets/img/halden-g3-full.jpg" data-lb data-avif="/assets/img/halden-g3-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A grassy path through bamboo and blue flowers toward a red torii gate under a dusk sky.">
             <picture>
 <source type="image/avif" srcset="/assets/img/halden-g3-480.avif 480w, /assets/img/halden-g3-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
 <source type="image/webp" srcset="/assets/img/halden-g3-480.webp 480w, /assets/img/halden-g3-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
 <img src="/assets/img/halden-g3-768.jpg" srcset="/assets/img/halden-g3-480.jpg 480w, /assets/img/halden-g3-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="A grassy path through bamboo and blue flowers toward a red torii gate under a dusk sky." loading="lazy" decoding="async">
 </picture>
-            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine<span class="chip__opt"> · Sept 2026</span></span></span>
             <span class="visually-hidden">Open full size</span>
           </a>
         </figure>
       </li>
       <li>
         <figure class="fig-plain">
-          <a href="/assets/img/halden-g4-full.jpg" data-lb data-avif="/assets/img/halden-g4-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A rope bridge crosses a mossy canyon above glowing green water.">
-            <picture>
-<source type="image/avif" srcset="/assets/img/halden-g4-480.avif 480w, /assets/img/halden-g4-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
-<source type="image/webp" srcset="/assets/img/halden-g4-480.webp 480w, /assets/img/halden-g4-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
-<img src="/assets/img/halden-g4-768.jpg" srcset="/assets/img/halden-g4-480.jpg 480w, /assets/img/halden-g4-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="A rope bridge crosses a mossy canyon above glowing green water." loading="lazy" decoding="async">
-</picture>
-            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
-            <span class="visually-hidden">Open full size</span>
-          </a>
-        </figure>
-      </li>
-      <li>
-        <figure class="fig-plain">
-          <a href="/assets/img/halden-g5-full.jpg" data-lb data-avif="/assets/img/halden-g5-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A frontier town of timber, pipes and water towers among red desert rock.">
-            <picture>
-<source type="image/avif" srcset="/assets/img/halden-g5-480.avif 480w, /assets/img/halden-g5-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
-<source type="image/webp" srcset="/assets/img/halden-g5-480.webp 480w, /assets/img/halden-g5-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
-<img src="/assets/img/halden-g5-768.jpg" srcset="/assets/img/halden-g5-480.jpg 480w, /assets/img/halden-g5-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="A frontier town of timber, pipes and water towers among red desert rock." loading="lazy" decoding="async">
-</picture>
-            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
-            <span class="visually-hidden">Open full size</span>
-          </a>
-        </figure>
-      </li>
-      <li>
-        <figure class="fig-plain">
-          <a href="/assets/img/halden-g6-full.jpg" data-lb data-avif="/assets/img/halden-g6-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A golden temple gate at the end of a dusty jungle path.">
+          <a class="g-link" href="/assets/img/halden-g6-full.jpg" data-lb data-avif="/assets/img/halden-g6-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A golden temple gate at the end of a dusty jungle path.">
             <picture>
 <source type="image/avif" srcset="/assets/img/halden-g6-480.avif 480w, /assets/img/halden-g6-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
 <source type="image/webp" srcset="/assets/img/halden-g6-480.webp 480w, /assets/img/halden-g6-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
 <img src="/assets/img/halden-g6-768.jpg" srcset="/assets/img/halden-g6-480.jpg 480w, /assets/img/halden-g6-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="A golden temple gate at the end of a dusty jungle path." loading="lazy" decoding="async">
 </picture>
-            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine<span class="chip__opt"> · Sept 2026</span></span></span>
             <span class="visually-hidden">Open full size</span>
           </a>
         </figure>
       </li>
       <li>
         <figure class="fig-plain">
-          <a href="/assets/img/halden-g7-full.jpg" data-lb data-avif="/assets/img/halden-g7-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="Aerial view of jungle ruins and stone towers among red cliffs.">
+          <a class="g-link" href="/assets/img/halden-g1-full.jpg" data-lb data-avif="/assets/img/halden-g1-full.avif" data-w="2359" data-h="1328" data-chip="In-engine · Sept 2026" data-alt="First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path.">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-g1-480.avif 480w, /assets/img/halden-g1-768.avif 768w, /assets/img/halden-g1-1024.avif 1024w" sizes="(min-width: 64rem) 25vw, 50vw">
+<source type="image/webp" srcset="/assets/img/halden-g1-480.webp 480w, /assets/img/halden-g1-768.webp 768w, /assets/img/halden-g1-1024.webp 1024w" sizes="(min-width: 64rem) 25vw, 50vw">
+<img src="/assets/img/halden-g1-768.jpg" srcset="/assets/img/halden-g1-480.jpg 480w, /assets/img/halden-g1-768.jpg 768w, /assets/img/halden-g1-1024.jpg 1024w" sizes="(min-width: 64rem) 25vw, 50vw" width="1024" height="576" alt="First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path." loading="lazy" decoding="async">
+</picture>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine<span class="chip__opt"> · Sept 2026</span></span></span>
+            <span class="visually-hidden">Open full size</span>
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure class="fig-plain">
+          <a class="g-link" href="/assets/img/halden-g4-full.jpg" data-lb data-avif="/assets/img/halden-g4-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A rope bridge crosses a mossy canyon above glowing green water.">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-g4-480.avif 480w, /assets/img/halden-g4-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<source type="image/webp" srcset="/assets/img/halden-g4-480.webp 480w, /assets/img/halden-g4-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<img src="/assets/img/halden-g4-768.jpg" srcset="/assets/img/halden-g4-480.jpg 480w, /assets/img/halden-g4-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="A rope bridge crosses a mossy canyon above glowing green water." loading="lazy" decoding="async">
+</picture>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine<span class="chip__opt"> · Sept 2026</span></span></span>
+            <span class="visually-hidden">Open full size</span>
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure class="fig-plain">
+          <a class="g-link" href="/assets/img/halden-g5-full.jpg" data-lb data-avif="/assets/img/halden-g5-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="A frontier town of timber, pipes and water towers among red desert rock.">
+            <picture>
+<source type="image/avif" srcset="/assets/img/halden-g5-480.avif 480w, /assets/img/halden-g5-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<source type="image/webp" srcset="/assets/img/halden-g5-480.webp 480w, /assets/img/halden-g5-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
+<img src="/assets/img/halden-g5-768.jpg" srcset="/assets/img/halden-g5-480.jpg 480w, /assets/img/halden-g5-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="A frontier town of timber, pipes and water towers among red desert rock." loading="lazy" decoding="async">
+</picture>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine<span class="chip__opt"> · Sept 2026</span></span></span>
+            <span class="visually-hidden">Open full size</span>
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure class="fig-plain">
+          <a class="g-link" href="/assets/img/halden-g7-full.jpg" data-lb data-avif="/assets/img/halden-g7-full.avif" data-w="1920" data-h="1080" data-chip="In-engine · Sept 2026" data-alt="Aerial view of jungle ruins and stone towers among red cliffs.">
             <picture>
 <source type="image/avif" srcset="/assets/img/halden-g7-480.avif 480w, /assets/img/halden-g7-768.avif 768w" sizes="(min-width: 64rem) 25vw, 50vw">
 <source type="image/webp" srcset="/assets/img/halden-g7-480.webp 480w, /assets/img/halden-g7-768.webp 768w" sizes="(min-width: 64rem) 25vw, 50vw">
 <img src="/assets/img/halden-g7-768.jpg" srcset="/assets/img/halden-g7-480.jpg 480w, /assets/img/halden-g7-768.jpg 768w" sizes="(min-width: 64rem) 25vw, 50vw" width="768" height="432" alt="Aerial view of jungle ruins and stone towers among red cliffs." loading="lazy" decoding="async">
 </picture>
-            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span>
+            <span class="chip figure-chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine<span class="chip__opt"> · Sept 2026</span></span></span>
             <span class="visually-hidden">Open full size</span>
           </a>
         </figure>
@@ -814,13 +814,13 @@
   </div>
   <dialog id="lightbox" class="lightbox" aria-labelledby="lb-cap">
     <div class="lightbox__inner">
+      <button class="lb-btn lb-close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
       <figure>
-        <picture><source type="image/avif"><img src="/assets/img/halden-g1-768.jpg" width="2359" height="1328" alt="First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path." loading="lazy" decoding="async"></picture>
-        <figcaption><span class="lightbox__count" id="lb-count">1 / 7</span><span id="lb-cap">In-engine · Sept 2026 — First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path.</span></figcaption>
+        <picture><source type="image/avif"><img src="/assets/img/halden-g1-480.jpg" width="2359" height="1328" alt="First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path." loading="lazy" decoding="async"></picture>
+        <figcaption id="lb-cap"><span class="lightbox__count" id="lb-count">1 / 7</span><span class="chip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-camera"></use></svg><span>In-engine · Sept 2026</span></span><span id="lb-alt">First-person combat in a sunlit jungle clearing: a bone golem lunges at the camera while a glowing gold pickup waits on the path.</span></figcaption>
       </figure>
       <button class="lb-btn lb-prev" type="button" aria-label="Previous image (7 of 7)"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-left"></use></svg></button>
       <button class="lb-btn lb-next" type="button" aria-label="Next image (2 of 7)"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-right"></use></svg></button>
-      <button class="lb-btn lb-close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
     </div>
   </dialog>
 </section>
@@ -852,14 +852,14 @@
         <div class="fcard__head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-youtube"></use></svg><h3>YouTube</h3></div>
         <p>Trailers and updates.</p>
         <div class="btn-row">
-          <a class="btn btn--primary btn--sm" href="https://www.youtube.com/@EmetStudiosOfficial" rel="noopener">Open the channel ↗</a>
+          <a class="btn btn--primary btn--sm" href="https://www.youtube.com/@EmetStudiosOfficial" rel="noopener"><span class="btn__main">Open the channel <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg></span></a>
         </div>
       </li>
       <li class="plate fcard">
         <div class="fcard__head"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-rss"></use></svg><h3>Devlog</h3></div>
         <p>Field notes from the build. Follow with any RSS reader — no account, no tracking.</p>
         <div class="btn-row">
-          <a class="btn btn--primary btn--sm" href="/devlog/">Read the devlog</a>
+          <a class="btn btn--ghost btn--sm" href="/devlog/">Read the devlog</a>
           <a class="btn btn--ghost btn--sm" href="/devlog/feed.xml">RSS feed</a>
         </div>
       </li>
@@ -914,7 +914,7 @@
 </footer>
 <div class="dock" aria-label="Quick actions" role="region">
   <a class="btn btn--primary" href="#follow">Follow the climb</a>
-  <a class="btn btn--ghost" href="https://www.youtube.com/watch?v=CzQmfyqux14" data-play="trailer"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg> Trailer</a>
+  <a class="btn btn--ghost" href="https://www.youtube.com/watch?v=CzQmfyqux14" data-play="trailer"><span class="btn__main"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg> Trailer</span></a>
 </div>
 </body>
 </html>

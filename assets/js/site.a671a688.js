@@ -11,19 +11,20 @@ f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
 f.allowFullscreen = true;
 f.referrerPolicy = 'strict-origin-when-cross-origin';
 a.replaceWith(f);
-f.focus();
+f.focus({ preventScroll: true });
 }
 $$('[data-yt]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); playTrailer(a); }));
 $$('[data-play="trailer"]').forEach(b => b.addEventListener('click', e => {
-const t = $('#trailer'), fac = $('#trailer [data-yt]');
-if (!t) return;
+const fr = $('#trailer .trailer__frame'), fac = $('#trailer [data-yt]');
+if (!fr) return;
 e.preventDefault();
-t.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' });
+const room = innerHeight - 64 - (matchMedia('(max-width: 63.99rem)').matches ? 72 : 0) - 16;
+fr.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: fr.offsetHeight > room ? 'start' : 'center' });
 if (fac) playTrailer(fac);
 }));
 const lb = $('#lightbox');
 if (lb) {
-const items = $$('[data-lb]'), img = $('img', lb), src = $('source', lb), cap = $('#lb-cap'), cnt = $('#lb-count');
+const items = $$('[data-lb]'), img = $('img', lb), src = $('source', lb), cap = $('#lb-alt'), cnt = $('#lb-count');
 const prev = $('.lb-prev', lb), next = $('.lb-next', lb), n = items.length;
 let i = 0, trigger = null;
 const show = k => {
@@ -33,7 +34,7 @@ if (src) src.srcset = a.dataset.avif || '';
 img.src = a.href;
 img.alt = a.dataset.alt;
 img.width = +a.dataset.w; img.height = +a.dataset.h;
-cap.textContent = a.dataset.chip + ' — ' + a.dataset.alt;
+cap.textContent = a.dataset.alt;
 cnt.textContent = `${i + 1} / ${n}`;
 prev.setAttribute('aria-label', `Previous image (${(i - 1 + n) % n + 1} of ${n})`);
 next.setAttribute('aria-label', `Next image (${(i + 1) % n + 1} of ${n})`);
@@ -58,6 +59,11 @@ if (e.isIntersecting) { e.target.classList.remove('pre'); e.target.classList.add
 }, { rootMargin: '0px 0px -8% 0px' });
 const vh = innerHeight;
 els.forEach(el => { if (el.getBoundingClientRect().top > vh) { el.classList.add('pre'); ob.observe(el); } });
+d.addEventListener('focusin', e => {
+for (let el = e.target.closest('.pre'); el; el = el.parentElement && el.parentElement.closest('.pre')) {
+el.classList.remove('pre'); el.classList.add('is-in'); ob.unobserve(el);
+}
+});
 }
 const themed = $$('[data-theme-section]');
 if (themed.length) {
@@ -99,14 +105,19 @@ dock.inert = !show;
 }).observe(hero);
 dock.inert = true;
 }
-const mb = $('.menu-btn'), panel = $('#nav-panel');
+const mb = $('.menu-btn'), panel = $('#nav-panel'), scrim = $('.nav-scrim');
 if (mb && panel) {
-const set = open => { mb.setAttribute('aria-expanded', open); panel.classList.toggle('is-open', open); };
+const set = open => {
+mb.setAttribute('aria-expanded', open); panel.classList.toggle('is-open', open);
+header.classList.toggle('menu-open', open); root.classList.toggle('menu-open', open);
+};
 mb.addEventListener('click', () => set(mb.getAttribute('aria-expanded') !== 'true'));
 d.addEventListener('keydown', e => {
 if (e.key === 'Escape' && mb.getAttribute('aria-expanded') === 'true') { set(false); mb.focus(); }
 });
 $$('a', panel).forEach(a => a.addEventListener('click', () => set(false)));
+if (scrim) scrim.addEventListener('click', () => { set(false); mb.focus(); });
+matchMedia('(min-width: 64rem)').addEventListener('change', q => { if (q.matches) set(false); });
 }
 const meter = $('.meter');
 if (meter) {
@@ -120,6 +131,18 @@ setTimeout(() => meter.classList.add('is-surged'), 900);
 }, { threshold: .6 });
 mo.observe(meter);
 }
+}
+if (location.hash.length > 1) {
+const t = d.getElementById(decodeURIComponent(location.hash.slice(1)));
+let user = false;
+['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(ev => addEventListener(ev, () => { user = true; }, { once: true, passive: true }));
+const align = () => {
+if (!t || user) return;
+const pad = parseFloat(getComputedStyle(root).scrollPaddingTop) || 0, dy = t.getBoundingClientRect().top - pad;
+if (Math.abs(dy) > 2) scrollBy({ top: dy, behavior: 'instant' });
+};
+d.fonts.ready.then(() => requestAnimationFrame(align));
+addEventListener('load', () => requestAnimationFrame(align), { once: true });
 }
 $$('[data-copy]').forEach(b => b.addEventListener('click', async () => {
 const src = d.getElementById(b.dataset.copy);
